@@ -360,12 +360,33 @@ tbody tr:hover {
   font-weight: 600;
 }
 
+/* Broker Chart Wrapper */
+.broker-chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 350px;
+}
+
+.broker-chart-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.broker-row {
+  align-items: stretch;
+}
+
+.broker-row > .col > .card {
+  height: 100%;
+}
+
 /* Broker Cards */
 .broker-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 1rem;
   margin-top: 1rem;
+  align-items: stretch;
 }
 
 .broker-card {
@@ -515,9 +536,11 @@ tbody tr:hover {
 /* Target Brokers Dashboard */
 .target-brokers-dashboard {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1rem;
   margin-top: 1rem;
+  max-height: 500px;
+  overflow-y: auto;
 }
 
 .target-broker-card {
@@ -672,6 +695,40 @@ tbody tr:hover {
   line-height: 1.6;
   font-size: 0.9rem;
   color: var(--text);
+  margin-top: 1rem;
+}
+
+/* AI Chart Wrapper */
+.ai-chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+}
+
+.ai-chart-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.ai-chart-wrapper.sentiment-chart {
+  height: 200px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.ai-chart-wrapper.radar-chart {
+  height: 320px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* AI Row - equal height cards */
+.ai-row {
+  align-items: stretch;
+}
+
+.ai-row > .col > .card {
+  height: 100%;
 }
 
 /* AI Chart Styles */
@@ -682,35 +739,11 @@ tbody tr:hover {
 }
 
 .heatmap-container {
-  min-height: 300px;
+  min-height: 280px;
   position: relative;
   background: var(--bg);
   border-radius: 8px;
   padding: 1rem;
-}
-
-.heatmap-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.heatmap-cell {
-  aspect-ratio: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  cursor: pointer;
-  border: 1px solid var(--border);
-}
-
-.heatmap-cell:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .heatmap-cell.positive {
@@ -743,6 +776,133 @@ tbody tr:hover {
 .heatmap-cell-value {
   font-size: 0.75rem;
   font-weight: 600;
+}
+
+.heatmap-cell-ratio {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.15rem;
+}
+
+.heatmap-cell.neutral .heatmap-cell-ratio {
+  color: var(--text-muted);
+}
+
+/* Heatmap size variations */
+.heatmap-cell.large {
+  grid-column: span 1;
+  min-height: 100px;
+}
+
+.heatmap-cell.large .heatmap-cell-code {
+  font-size: 1rem;
+}
+
+.heatmap-cell.large .heatmap-cell-name {
+  font-size: 0.8rem;
+}
+
+.heatmap-cell.large .heatmap-cell-value {
+  font-size: 0.9rem;
+}
+
+.heatmap-cell.medium .heatmap-cell-code {
+  font-size: 0.9rem;
+}
+
+/* Heatmap header */
+.heatmap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.heatmap-header h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.heatmap-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.heatmap-select {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.heatmap-select:hover {
+  border-color: var(--accent);
+}
+
+.heatmap-select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* Heatmap summary stats */
+.heatmap-summary {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0.8rem 0;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.summary-icon {
+  font-weight: bold;
+}
+
+.summary-icon.positive {
+  color: #2ed573;
+}
+
+.summary-icon.negative {
+  color: #ff4757;
+}
+
+/* Heatmap grid */
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.heatmap-cell {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.heatmap-cell:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .chart-legend {
@@ -784,13 +944,146 @@ tbody tr:hover {
 .analysis-report {
   background: var(--bg);
   border-radius: 8px;
-  padding: 1rem;
+  padding: 1.5rem;
   margin-top: 1rem;
-  max-height: 500px;
+  max-height: 600px;
   overflow-y: auto;
-  white-space: pre-wrap;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
-  line-height: 1.6;
+  line-height: 1.8;
+}
+
+.analysis-report .report-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.analysis-report .report-header h3 {
+  color: var(--accent);
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem;
+}
+
+.analysis-report .report-meta {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.analysis-report .report-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.analysis-report .report-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.analysis-report .report-section h4 {
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+}
+
+.analysis-report .insight-content,
+.analysis-report .sentiment-content,
+.analysis-report .detailed-analysis {
+  background: var(--bg-card);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--success);
+  line-height: 1.8;
+}
+
+.analysis-report .stock-ranking {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.analysis-report .rank-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.analysis-report .rank-number {
+  background: var(--accent);
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.analysis-report .stock-info {
+  flex: 1;
+}
+
+.analysis-report .stock-info strong {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.analysis-report .stock-metrics {
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.analysis-report .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.analysis-report .stat-item {
+  background: var(--bg-card);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.analysis-report .stat-item .stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.analysis-report .stat-item .stat-value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.report-placeholder,
+.report-loading,
+.report-error {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.report-loading {
+  color: var(--accent);
+}
+
+.report-error {
+  color: var(--buy);
+  background: rgba(255, 71, 87, 0.1);
+  border-radius: 8px;
 }
 
 .stock-recommendation {
@@ -867,6 +1160,9 @@ tbody tr:hover {
   padding: 1rem;
   border: 1px solid var(--border);
   transition: transform 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .individual-stock-card:hover {
@@ -875,10 +1171,17 @@ tbody tr:hover {
 }
 
 .individual-stock-card h4 {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 1.1rem;
+}
+
+.individual-stock-card .analysis-summary {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 200px;
 }
 
 .stock-code {
@@ -1205,6 +1508,18 @@ tbody tr:hover {
 
 .footer a:hover {
   text-decoration: underline;
+}
+
+/* Chart Wrapper for proper sizing */
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 350px;
+}
+
+.chart-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 /* Chart and Visualization Responsiveness */
@@ -1595,6 +1910,292 @@ tbody tr:hover {
   #loadBtn:active {
     transform: translateY(0);
     opacity: 0.8;
+  }
+}
+
+/* ========================================
+   Sentiment Dashboard Enhanced Styles
+   ======================================== */
+
+/* Sentiment Overview */
+.sentiment-overview {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.sentiment-main-score {
+  text-align: center;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sentiment-main-score .score-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.sentiment-main-score .score-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.3rem 0;
+}
+
+.sentiment-main-score .score-confidence {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Sentiment Color Classes */
+.sentiment-very-positive .score-value,
+.sentiment-very-positive .score-label { color: #22c55e; }
+.sentiment-positive .score-value,
+.sentiment-positive .score-label { color: #84cc16; }
+.sentiment-neutral .score-value,
+.sentiment-neutral .score-label { color: #eab308; }
+.sentiment-negative .score-value,
+.sentiment-negative .score-label { color: #f97316; }
+.sentiment-very-negative .score-value,
+.sentiment-very-negative .score-label { color: #ef4444; }
+
+/* Timeframe Section */
+.sentiment-timeframes {
+  margin-bottom: 1rem;
+}
+
+.sentiment-timeframes h5,
+.sentiment-details h5,
+.market-comparison h5,
+.institutional-summary h5 {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 0.6rem 0;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.timeframe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.timeframe-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 0.7rem;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.timeframe-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.timeframe-card.sentiment-very-positive { border-left: 3px solid #22c55e; }
+.timeframe-card.sentiment-positive { border-left: 3px solid #84cc16; }
+.timeframe-card.sentiment-neutral { border-left: 3px solid #eab308; }
+.timeframe-card.sentiment-negative { border-left: 3px solid #f97316; }
+.timeframe-card.sentiment-very-negative { border-left: 3px solid #ef4444; }
+
+.tf-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.tf-sentiment {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.timeframe-card.sentiment-very-positive .tf-sentiment { color: #22c55e; }
+.timeframe-card.sentiment-positive .tf-sentiment { color: #84cc16; }
+.timeframe-card.sentiment-neutral .tf-sentiment { color: #eab308; }
+.timeframe-card.sentiment-negative .tf-sentiment { color: #f97316; }
+.timeframe-card.sentiment-very-negative .tf-sentiment { color: #ef4444; }
+
+.tf-details {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.tf-metric {
+  font-size: 0.75rem;
+}
+
+.metric-up { color: #22c55e; }
+.metric-down { color: #ef4444; }
+
+.tf-momentum {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* Component Bars */
+.sentiment-details {
+  margin-bottom: 1rem;
+}
+
+.component-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.component-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.component-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  width: 70px;
+  flex-shrink: 0;
+}
+
+.component-bar-container {
+  flex: 1;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.component-bar {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+.component-bar.positive { background: linear-gradient(90deg, #84cc16, #22c55e); }
+.component-bar.negative { background: linear-gradient(90deg, #ef4444, #f97316); }
+.component-bar.neutral { background: linear-gradient(90deg, #eab308, #fbbf24); }
+
+.component-bar-center {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-50%);
+}
+
+.component-value {
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: 45px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.component-value.positive { color: #22c55e; }
+.component-value.negative { color: #ef4444; }
+.component-value.neutral { color: #eab308; }
+
+/* Market Comparison */
+.market-comparison {
+  margin-bottom: 1rem;
+}
+
+.market-preference-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 0.8rem;
+  border: 1px solid var(--border);
+}
+
+.preference-label {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.preference-label strong {
+  color: var(--accent);
+}
+
+.market-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.market-stat {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+
+.market-stat .stat-name {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+}
+
+.market-stat .stat-value {
+  font-weight: 600;
+}
+
+.divergence {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Institutional Summary */
+.institutional-summary {
+  margin-bottom: 0;
+}
+
+.direction-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 0.8rem;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.direction-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-light);
+  margin-bottom: 0.3rem;
+}
+
+.direction-meta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Responsive adjustments for sentiment */
+@media (max-width: 600px) {
+  .timeframe-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sentiment-main-score .score-value {
+    font-size: 2rem;
+  }
+
+  .component-label {
+    width: 60px;
+    font-size: 0.75rem;
+  }
+
+  .component-value {
+    width: 40px;
+    font-size: 0.75rem;
   }
 }
 

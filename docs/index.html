@@ -72,7 +72,9 @@
       <div class="col chart-col">
         <div class="card">
           <h3 id="chartTitle">2330 三大法人持股比重</h3>
-          <canvas id="ratioChart" height="280"></canvas>
+          <div class="chart-wrapper">
+            <canvas id="ratioChart"></canvas>
+          </div>
         </div>
       </div>
       <div class="col table-col">
@@ -141,11 +143,13 @@
     </div>
 
     <!-- 券商活躍度視覺化 -->
-    <div class="row">
+    <div class="row broker-row">
       <div class="col">
         <div class="card">
           <h3>🏆 券商買賣超排行榜</h3>
-          <canvas id="brokerRankingChart" height="300"></canvas>
+          <div class="broker-chart-wrapper">
+            <canvas id="brokerRankingChart"></canvas>
+          </div>
         </div>
       </div>
       <div class="col">
@@ -157,7 +161,9 @@
               <option value="ALL">全部目標券商</option>
             </select>
           </div>
-          <canvas id="brokerTrendChart" height="250"></canvas>
+          <div class="broker-chart-wrapper">
+            <canvas id="brokerTrendChart"></canvas>
+          </div>
         </div>
       </div>
     </div>
@@ -230,11 +236,13 @@
     </div>
 
     <!-- 分析報告摘要 -->
-    <div class="row">
+    <div class="row ai-row">
       <div class="col">
         <div class="card">
           <h3>📊 法人持股趨勢圖</h3>
-          <canvas id="institutionalTrendChart" height="250"></canvas>
+          <div class="ai-chart-wrapper">
+            <canvas id="institutionalTrendChart"></canvas>
+          </div>
           <div id="trendAnalysisContent" class="analysis-content">
             載入中...
           </div>
@@ -243,8 +251,8 @@
       <div class="col">
         <div class="card">
           <h3>💭 市場情緒儀表板</h3>
-          <div class="sentiment-dashboard">
-            <canvas id="sentimentGauge" height="200"></canvas>
+          <div class="ai-chart-wrapper sentiment-chart">
+            <canvas id="sentimentGauge"></canvas>
           </div>
           <div id="sentimentAnalysisContent" class="analysis-content">
             載入中...
@@ -253,11 +261,13 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row ai-row">
       <div class="col">
         <div class="card">
           <h3>⭐ 推薦股票評分雷達圖</h3>
-          <canvas id="recommendationRadarChart" height="300"></canvas>
+          <div class="ai-chart-wrapper radar-chart">
+            <canvas id="recommendationRadarChart"></canvas>
+          </div>
           <div id="recommendationsContent" class="analysis-content">
             載入中...
           </div>
@@ -305,6 +315,7 @@
 
   <footer class="footer">
     <p>資料每日自動更新</p>
+    <p>Powered by <a href="https://www.zh-aoi.com/" target="_blank" rel="noopener noreferrer">智合科技</a></p>
   </footer>
 
   <script src="script.js"></script>

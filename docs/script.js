@@ -110,6 +110,7 @@ async function loadStock(code) {
       data: { labels, datasets },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         interaction: { mode: "index", intersect: false },
         scales: {
           x: {
@@ -405,6 +406,7 @@ function renderBrokerTrendChart(selectedBroker) {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       interaction: { mode: "index", intersect: false },
       scales: {
         x: {
@@ -419,6 +421,7 @@ function renderBrokerTrendChart(selectedBroker) {
       },
       plugins: {
         legend: {
+          display: selectedBroker !== "ALL",
           position: "bottom",
           labels: { color: "#eaeaea", boxWidth: 12 },
         },
@@ -532,13 +535,11 @@ async function loadAIAnalysis() {
   try {
     await Promise.all([
       createInstitutionalTrendChart(),
-      createSentimentGauge(),
       createRecommendationRadarChart(),
       createHoldingHeatmap(),
       loadTrendAnalysis(),
-      loadSentimentAnalysis(), 
+      loadSentimentAnalysis(),
       loadRecommendations(),
-      loadWatchlists(),
       loadIndividualAnalysis()
     ]);
   } catch (error) {
@@ -618,18 +619,205 @@ async function loadSentimentAnalysis() {
   const container = document.getElementById("sentimentAnalysisContent");
   try {
     const data = await fetchJson("data/ai_analysis/market_sentiment_analysis.json");
-    
-    let html = `<h4>市場情緒指標</h4>`;
-    html += `<div class="analysis-summary">整體情緒：<strong>${data.overall_sentiment || "中性"}</strong></div>`;
-    
-    if (data.sentiment_summary) {
-      html += `<p>${data.sentiment_summary}</p>`;
-    }
+
+    const sentimentScore = data.sentiment_score || {};
+    const sentimentData = data.sentiment_data || {};
+    const institutional = sentimentData.institutional || {};
+    const momentum = sentimentData.momentum || {};
+    const crossMarket = sentimentData.cross_market || {};
+    const byTimeframe = institutional.by_timeframe || {};
+
+    // 更新情緒儀表圖
+    updateSentimentGauge(sentimentScore.score || 0, sentimentScore.label || "中性");
+
+    let html = `
+      <div class="sentiment-overview">
+        <div class="sentiment-main-score ${getSentimentClass(sentimentScore.label)}">
+          <div class="score-value">${(sentimentScore.score * 100).toFixed(0)}</div>
+          <div class="score-label">${sentimentScore.label || "中性"}</div>
+          <div class="score-confidence">信心度：${sentimentScore.confidence || "N/A"}</div>
+        </div>
+      </div>
+
+      <div class="sentiment-timeframes">
+        <h5>📅 各時間週期情緒</h5>
+        <div class="timeframe-grid">
+          ${renderTimeframeCard("5日", byTimeframe["5d"])}
+          ${renderTimeframeCard("20日", byTimeframe["20d"])}
+          ${renderTimeframeCard("60日", byTimeframe["60d"])}
+        </div>
+      </div>
+
+      <div class="sentiment-details">
+        <h5>📊 情緒組成分析</h5>
+        <div class="component-bars">
+          ${renderComponentBar("法人動向", sentimentScore.components?.institutional)}
+          ${renderComponentBar("券商動向", sentimentScore.components?.broker)}
+          ${renderComponentBar("市場動能", sentimentScore.components?.momentum)}
+        </div>
+      </div>
+
+      <div class="market-comparison">
+        <h5>🔄 市場偏好</h5>
+        <div class="market-preference-card">
+          <div class="preference-label">法人偏好：<strong>${crossMarket.market_preference || "N/A"}</strong></div>
+          <div class="market-stats">
+            <div class="market-stat">
+              <span class="stat-name">上市股票</span>
+              <span class="stat-value">${crossMarket.twse_stock_count || 0}檔</span>
+            </div>
+            <div class="market-stat">
+              <span class="stat-name">上櫃股票</span>
+              <span class="stat-value">${crossMarket.tpex_stock_count || 0}檔</span>
+            </div>
+          </div>
+          <div class="divergence">市場分歧度：${(crossMarket.cross_market_divergence * 100 || 0).toFixed(2)}%</div>
+        </div>
+      </div>
+
+      <div class="institutional-summary">
+        <h5>🏛️ 法人整體方向</h5>
+        <div class="direction-card">
+          <div class="direction-label">${institutional.overall_direction || "N/A"}</div>
+          <div class="direction-meta">
+            <span>強度：${institutional.strength || "N/A"}</span>
+            <span>一致性：${institutional.consistency || "N/A"}</span>
+          </div>
+        </div>
+      </div>
+    `;
 
     container.innerHTML = html;
   } catch (error) {
+    console.error("Sentiment analysis error:", error);
     container.innerHTML = "情緒分析數據載入失敗";
   }
+}
+
+function getSentimentClass(label) {
+  const classMap = {
+    "強烈樂觀": "sentiment-very-positive",
+    "樂觀": "sentiment-positive",
+    "中性": "sentiment-neutral",
+    "悲觀": "sentiment-negative",
+    "強烈悲觀": "sentiment-very-negative"
+  };
+  return classMap[label] || "sentiment-neutral";
+}
+
+function renderTimeframeCard(label, data) {
+  if (!data) return `<div class="timeframe-card"><div class="tf-label">${label}</div><div class="tf-value">N/A</div></div>`;
+
+  const sentimentClass = getSentimentClass(data.sentiment_label);
+  return `
+    <div class="timeframe-card ${sentimentClass}">
+      <div class="tf-label">${label}</div>
+      <div class="tf-sentiment">${data.sentiment_label || "N/A"}</div>
+      <div class="tf-details">
+        <div class="tf-metric">
+          <span class="metric-up">▲ ${(data.avg_gain || 0).toFixed(2)}%</span>
+        </div>
+        <div class="tf-metric">
+          <span class="metric-down">▼ ${(data.avg_loss || 0).toFixed(2)}%</span>
+        </div>
+      </div>
+      <div class="tf-momentum">動能比：${(data.momentum_ratio * 100 || 0).toFixed(1)}%</div>
+    </div>
+  `;
+}
+
+function renderComponentBar(label, value) {
+  if (value === null || value === undefined) {
+    return `
+      <div class="component-row">
+        <span class="component-label">${label}</span>
+        <div class="component-bar-container">
+          <div class="component-bar neutral" style="width: 50%;"></div>
+        </div>
+        <span class="component-value">N/A</span>
+      </div>
+    `;
+  }
+
+  const percentage = Math.min(Math.max((value + 1) / 2 * 100, 0), 100);
+  const barClass = value > 0.1 ? "positive" : value < -0.1 ? "negative" : "neutral";
+
+  return `
+    <div class="component-row">
+      <span class="component-label">${label}</span>
+      <div class="component-bar-container">
+        <div class="component-bar ${barClass}" style="width: ${percentage}%;"></div>
+        <div class="component-bar-center"></div>
+      </div>
+      <span class="component-value ${barClass}">${(value * 100).toFixed(1)}</span>
+    </div>
+  `;
+}
+
+function updateSentimentGauge(score, label) {
+  const canvas = document.getElementById("sentimentGauge");
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+
+  // 清除現有圖表（使用模組層級變數）
+  if (sentimentGaugeChart) {
+    sentimentGaugeChart.destroy();
+    sentimentGaugeChart = null;
+  }
+
+  // 轉換分數為 0-100
+  const gaugeValue = Math.round((score + 1) / 2 * 100);
+
+  // 創建漸層色
+  const getGaugeColor = (value) => {
+    if (value >= 70) return "#22c55e";
+    if (value >= 55) return "#84cc16";
+    if (value >= 45) return "#eab308";
+    if (value >= 30) return "#f97316";
+    return "#ef4444";
+  };
+
+  sentimentGaugeChart = new Chart(ctx, {
+    type: "doughnut",
+    data: {
+      labels: ["情緒指數", ""],
+      datasets: [{
+        data: [gaugeValue, 100 - gaugeValue],
+        backgroundColor: [getGaugeColor(gaugeValue), "rgba(100,100,100,0.2)"],
+        borderWidth: 0,
+        circumference: 180,
+        rotation: 270
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: "75%",
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: false }
+      }
+    },
+    plugins: [{
+      id: "gaugeText",
+      afterDraw: (chart) => {
+        const { ctx, chartArea } = chart;
+        const centerX = (chartArea.left + chartArea.right) / 2;
+        const centerY = chartArea.bottom - 20;
+
+        ctx.save();
+        ctx.textAlign = "center";
+        ctx.fillStyle = getGaugeColor(gaugeValue);
+        ctx.font = "bold 28px sans-serif";
+        ctx.fillText(gaugeValue, centerX, centerY - 15);
+        ctx.font = "14px sans-serif";
+        ctx.fillStyle = "#888";
+        ctx.fillText(label, centerX, centerY + 10);
+        ctx.restore();
+      }
+    }]
+  });
 }
 
 async function loadRecommendations() {
@@ -794,16 +982,18 @@ async function loadIndividualAnalysis() {
 
 async function loadFullReport(reportType) {
   const container = document.getElementById("fullReportContent");
-  
+
   if (!reportType) {
-    container.innerHTML = "請選擇一個報告查看詳細內容";
+    container.innerHTML = '<div class="report-placeholder">請選擇一個報告查看詳細內容</div>';
     return;
   }
+
+  container.innerHTML = '<div class="report-loading">載入報告中...</div>';
 
   try {
     const data = await fetchJson(`data/ai_analysis/${reportType}.json`);
     let html = "";
-    
+
     switch (reportType) {
       case 'trend_analysis_5d':
       case 'trend_analysis_20d':
@@ -819,10 +1009,11 @@ async function loadFullReport(reportType) {
       default:
         html = formatGenericReport(data);
     }
-    
+
     container.innerHTML = html;
   } catch (error) {
-    container.innerHTML = "報告載入失敗：" + error.message;
+    console.error("Report loading error:", error);
+    container.innerHTML = `<div class="report-error">報告載入失敗：${error.message}</div>`;
   }
 }
 
@@ -947,42 +1138,155 @@ function formatTrendAnalysisReport(data, reportType) {
 }
 
 function formatSentimentAnalysisReport(data) {
+  const sentimentScore = data.sentiment_score || {};
+  const sentimentData = data.sentiment_data || {};
+  const institutional = sentimentData.institutional || {};
+  const momentum = sentimentData.momentum || {};
+  const crossMarket = sentimentData.cross_market || {};
+  const byTimeframe = institutional.by_timeframe || {};
+
   let html = `
     <div class="report-header">
       <h3>💭 市場情緒分析報告</h3>
       <p class="report-meta">生成時間：${new Date(data.metadata?.generated_at).toLocaleString('zh-TW')}</p>
     </div>
   `;
-  
-  if (data.overall_sentiment) {
+
+  // 整體情緒評分
+  html += `
+    <div class="report-section">
+      <h4>🎯 整體市場情緒</h4>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-label">情緒評分</div>
+          <div class="stat-value" style="color: ${sentimentScore.score > 0 ? '#22c55e' : sentimentScore.score < 0 ? '#ef4444' : '#eab308'}">
+            ${((sentimentScore.score || 0) * 100).toFixed(1)}
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">情緒標籤</div>
+          <div class="stat-value">${sentimentScore.label || 'N/A'}</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">信心度</div>
+          <div class="stat-value">${sentimentScore.confidence || 'N/A'}</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">法人方向</div>
+          <div class="stat-value">${institutional.overall_direction || 'N/A'}</div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // 情緒組成分析
+  if (sentimentScore.components) {
     html += `
       <div class="report-section">
-        <h4>🎯 整體市場情緒</h4>
-        <div class="sentiment-indicator ${data.overall_sentiment.toLowerCase()}">
-          ${data.overall_sentiment}
+        <h4>📊 情緒組成分析</h4>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-label">法人動向</div>
+            <div class="stat-value">${sentimentScore.components.institutional !== null ? (sentimentScore.components.institutional * 100).toFixed(1) : 'N/A'}</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">券商動向</div>
+            <div class="stat-value" style="color: ${sentimentScore.components.broker > 0 ? '#22c55e' : '#ef4444'}">
+              ${sentimentScore.components.broker !== null ? (sentimentScore.components.broker * 100).toFixed(1) : 'N/A'}
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">市場動能</div>
+            <div class="stat-value">${sentimentScore.components.momentum !== null ? (sentimentScore.components.momentum * 100).toFixed(1) : 'N/A'}</div>
+          </div>
         </div>
       </div>
     `;
   }
-  
-  if (data.sentiment_summary) {
+
+  // 各時間週期分析
+  if (byTimeframe) {
     html += `
       <div class="report-section">
-        <h4>📋 情緒分析摘要</h4>
-        <div class="sentiment-content">${data.sentiment_summary}</div>
+        <h4>📅 各時間週期情緒</h4>
+        <div class="stats-grid">
+    `;
+
+    ['5d', '20d', '60d'].forEach(period => {
+      const tf = byTimeframe[period];
+      if (tf) {
+        const periodLabel = period === '5d' ? '5日' : period === '20d' ? '20日' : '60日';
+        html += `
+          <div class="stat-item">
+            <div class="stat-label">${periodLabel}情緒</div>
+            <div class="stat-value" style="color: ${tf.sentiment_label === '樂觀' || tf.sentiment_label === '強烈樂觀' ? '#22c55e' : tf.sentiment_label === '悲觀' || tf.sentiment_label === '強烈悲觀' ? '#ef4444' : '#eab308'}">
+              ${tf.sentiment_label || 'N/A'}
+            </div>
+            <div class="stat-label" style="margin-top: 0.5rem; font-size: 0.75rem;">
+              ▲ ${(tf.avg_gain || 0).toFixed(2)}% / ▼ ${(tf.avg_loss || 0).toFixed(2)}%
+            </div>
+            <div class="stat-label" style="font-size: 0.75rem;">
+              動能比：${((tf.momentum_ratio || 0) * 100).toFixed(1)}%
+            </div>
+          </div>
+        `;
+      }
+    });
+
+    html += `
+        </div>
       </div>
     `;
   }
-  
-  if (data.detailed_analysis) {
+
+  // 跨市場分析
+  if (crossMarket) {
     html += `
       <div class="report-section">
-        <h4>🔍 詳細分析</h4>
-        <div class="detailed-analysis">${data.detailed_analysis.replace(/\n/g, '<br>')}</div>
+        <h4>🔄 跨市場分析</h4>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-label">法人偏好市場</div>
+            <div class="stat-value">${crossMarket.market_preference || 'N/A'}</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">上市股票數</div>
+            <div class="stat-value">${crossMarket.twse_stock_count || 0}檔</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">上櫃股票數</div>
+            <div class="stat-value">${crossMarket.tpex_stock_count || 0}檔</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">市場分歧度</div>
+            <div class="stat-value">${((crossMarket.cross_market_divergence || 0) * 100).toFixed(2)}%</div>
+          </div>
+        </div>
       </div>
     `;
   }
-  
+
+  // 法人特性
+  html += `
+    <div class="report-section">
+      <h4>🏛️ 法人特性分析</h4>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-label">整體方向</div>
+          <div class="stat-value">${institutional.overall_direction || 'N/A'}</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">趨勢強度</div>
+          <div class="stat-value">${institutional.strength || 'N/A'}</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">一致性</div>
+          <div class="stat-value">${institutional.consistency || 'N/A'}</div>
+        </div>
+      </div>
+    </div>
+  `;
+
   return html;
 }
 
@@ -1134,6 +1438,7 @@ async function createInstitutionalTrendChart() {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: {
             labels: { color: "#eaeaea" }
@@ -1191,6 +1496,7 @@ async function createSentimentGauge() {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         cutout: '70%',
         plugins: {
           legend: { display: false }
@@ -1281,6 +1587,7 @@ async function createRecommendationRadarChart() {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: {
             position: "bottom",
@@ -1307,22 +1614,43 @@ async function createRecommendationRadarChart() {
 async function createHoldingHeatmap() {
   const container = document.getElementById("holdingHeatmap");
   if (!container) return;
-  
+
   try {
     const data = await fetchJson("data/ai_analysis/trend_analysis_20d.json");
-    
-    const allStocks = [
-      ...(data.top_gainers?.slice(0, 6) || []),
-      ...(data.top_decliners?.slice(0, 6) || [])
-    ];
-    
+
+    // 取得更多股票並按變化幅度排序
+    const gainers = (data.top_gainers || []).slice(0, 8);
+    const decliners = (data.top_decliners || []).slice(0, 8);
+
+    // 合併並按絕對值變化幅度排序
+    const allStocks = [...gainers, ...decliners].sort((a, b) =>
+      Math.abs(b.change || 0) - Math.abs(a.change || 0)
+    );
+
     if (allStocks.length === 0) {
       container.innerHTML = '<p style="text-align: center; color: #8b8b9e;">暫無持股變化數據</p>';
       return;
     }
-    
+
+    // 計算最大變化幅度用於正規化
+    const maxChange = Math.max(...allStocks.map(s => Math.abs(s.change || 0)), 1);
+
     let html = `
-      <h4>法人持股變化概覽</h4>
+      <div class="heatmap-header">
+        <h4>法人持股變化概覽</h4>
+        <div class="heatmap-controls">
+          <select id="heatmapSort" class="heatmap-select">
+            <option value="abs">按幅度排序</option>
+            <option value="gain">增持優先</option>
+            <option value="loss">減持優先</option>
+          </select>
+        </div>
+      </div>
+      <div class="heatmap-summary">
+        <span class="summary-item"><span class="summary-icon positive">▲</span> 增持 ${gainers.length} 檔</span>
+        <span class="summary-item"><span class="summary-icon negative">▼</span> 減持 ${decliners.length} 檔</span>
+        <span class="summary-item"><span class="summary-icon">Σ</span> 共 ${allStocks.length} 檔</span>
+      </div>
       <div class="chart-legend">
         <div class="legend-item">
           <div class="legend-color" style="background: rgba(46, 213, 115, 0.8);"></div>
@@ -1337,33 +1665,97 @@ async function createHoldingHeatmap() {
           <span>持平</span>
         </div>
       </div>
-      <div class="heatmap-grid">
+      <div class="heatmap-grid" id="heatmapGridContent">
     `;
-    
-    allStocks.forEach(stock => {
-      const change = stock.change || 0;
-      const intensity = Math.min(Math.abs(change) / 10, 1); // 歸一化到0-1
-      let cellClass = 'neutral';
-      
-      if (change > 1) cellClass = 'positive';
-      else if (change < -1) cellClass = 'negative';
-      
-      html += `
-        <div class="heatmap-cell ${cellClass}" style="opacity: ${0.6 + intensity * 0.4}">
-          <div class="heatmap-cell-code">${stock.code}</div>
-          <div class="heatmap-cell-name">${stock.name}</div>
-          <div class="heatmap-cell-value">${change >= 0 ? '+' : ''}${change.toFixed(1)}%</div>
-        </div>
-      `;
-    });
-    
+
+    html += renderHeatmapCells(allStocks, maxChange);
     html += '</div>';
     container.innerHTML = html;
-    
+
+    // 綁定排序事件
+    const sortSelect = document.getElementById('heatmapSort');
+    if (sortSelect) {
+      sortSelect.addEventListener('change', (e) => {
+        const sortedStocks = sortHeatmapStocks([...gainers, ...decliners], e.target.value);
+        const gridContent = document.getElementById('heatmapGridContent');
+        if (gridContent) {
+          gridContent.innerHTML = renderHeatmapCells(sortedStocks, maxChange);
+          bindHeatmapClickEvents();
+        }
+      });
+    }
+
+    // 綁定點擊事件
+    bindHeatmapClickEvents();
+
   } catch (error) {
     console.error("Failed to create heatmap:", error);
     container.innerHTML = '<p style="text-align: center; color: #ff4757;">熱力圖載入失敗</p>';
   }
+}
+
+function sortHeatmapStocks(stocks, sortType) {
+  switch (sortType) {
+    case 'gain':
+      return stocks.sort((a, b) => (b.change || 0) - (a.change || 0));
+    case 'loss':
+      return stocks.sort((a, b) => (a.change || 0) - (b.change || 0));
+    case 'abs':
+    default:
+      return stocks.sort((a, b) => Math.abs(b.change || 0) - Math.abs(a.change || 0));
+  }
+}
+
+function renderHeatmapCells(stocks, maxChange) {
+  return stocks.map(stock => {
+    const change = stock.change || 0;
+    const ratio = stock.three_inst_ratio || 0;
+    const intensity = Math.min(Math.abs(change) / maxChange, 1);
+    let cellClass = 'neutral';
+
+    if (change > 0.5) cellClass = 'positive';
+    else if (change < -0.5) cellClass = 'negative';
+
+    // 計算大小類別（根據變化幅度）
+    let sizeClass = '';
+    if (Math.abs(change) >= 5) sizeClass = 'large';
+    else if (Math.abs(change) >= 2) sizeClass = 'medium';
+
+    return `
+      <div class="heatmap-cell ${cellClass} ${sizeClass}"
+           style="opacity: ${0.65 + intensity * 0.35}"
+           data-code="${stock.code}"
+           title="${stock.name} (${stock.code})&#10;市場：${stock.market || 'N/A'}&#10;法人持股：${ratio.toFixed(2)}%&#10;變化：${change >= 0 ? '+' : ''}${change.toFixed(2)}%">
+        <div class="heatmap-cell-code">${stock.code}</div>
+        <div class="heatmap-cell-name">${stock.name}</div>
+        <div class="heatmap-cell-value">${change >= 0 ? '+' : ''}${change.toFixed(1)}%</div>
+        <div class="heatmap-cell-ratio">${ratio.toFixed(1)}%持股</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function bindHeatmapClickEvents() {
+  const cells = document.querySelectorAll('.heatmap-cell[data-code]');
+  cells.forEach(cell => {
+    cell.addEventListener('click', () => {
+      const code = cell.dataset.code;
+      if (code) {
+        // 切換到三大法人頁籤並載入該股票
+        const institutionalBtn = document.querySelector('.nav-btn[data-section="institutional"]');
+        if (institutionalBtn) {
+          institutionalBtn.click();
+          setTimeout(() => {
+            const stockInput = document.getElementById('stockInput');
+            if (stockInput) {
+              stockInput.value = code;
+              document.getElementById('loadBtn')?.click();
+            }
+          }, 100);
+        }
+      }
+    });
+  });
 }
 
 // ========== Enhanced Broker Functions ==========
@@ -1437,9 +1829,18 @@ async function createBrokerRankingChart() {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: {
             labels: { color: "#eaeaea" }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const value = context.raw;
+                return `淨買賣超: ${formatNumber(value)}張`;
+              }
+            }
           }
         },
         scales: {
@@ -1449,23 +1850,13 @@ async function createBrokerRankingChart() {
           },
           y: {
             title: { display: true, text: "淨買賣超 (張)", color: "#8b8b9e" },
-            ticks: { 
+            ticks: {
               color: "#8b8b9e",
               callback: function(value) {
                 return formatNumber(value);
               }
             },
             grid: { color: "rgba(255,255,255,0.05)" }
-          }
-        },
-        plugins: {
-          tooltip: {
-            callbacks: {
-              label: function(context) {
-                const value = context.raw;
-                return `淨買賣超: ${formatNumber(value)}張`;
-              }
-            }
           }
         }
       }
