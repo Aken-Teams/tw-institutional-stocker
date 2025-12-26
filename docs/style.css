@@ -229,6 +229,35 @@ select {
 
 input[type="checkbox"] {
   accent-color: var(--accent);
+  transform: scale(1.2); /* Larger touch targets */
+  margin: 0.2rem;
+}
+
+/* Touch-friendly form elements */
+input[type="text"],
+input[type="number"],
+select,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 8px;
+}
+
+/* Improve mobile form usability */
+@media (max-width: 768px) {
+  input[type="checkbox"] {
+    transform: scale(1.4);
+    margin: 0.3rem;
+  }
+  
+  select {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg fill='%23eaeaea' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1rem;
+    padding-right: 2rem;
+  }
 }
 
 /* Layout */
@@ -373,6 +402,137 @@ tbody tr:hover {
   display: inline-block;
 }
 
+/* AI Analysis Styles */
+.analysis-content {
+  line-height: 1.6;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.analysis-content h4 {
+  color: var(--accent);
+  margin: 1rem 0 0.5rem;
+  font-size: 1rem;
+}
+
+.analysis-content ul {
+  margin: 0.5rem 0;
+  padding-left: 1.2rem;
+}
+
+.analysis-content li {
+  margin: 0.3rem 0;
+}
+
+.analysis-report {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  max-height: 500px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+.stock-recommendation {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--accent);
+}
+
+.stock-recommendation h4 {
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recommendation-strength {
+  background: rgba(233, 69, 96, 0.2);
+  color: var(--accent);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+}
+
+.metric-item {
+  background: var(--bg-card);
+  padding: 0.5rem;
+  border-radius: 6px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.metric-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.metric-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.analysis-summary {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-left: 3px solid var(--success);
+}
+
+.risk-factors {
+  background: rgba(255, 199, 0, 0.1);
+  border-left: 3px solid var(--warning);
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+}
+
+.individual-stock-card {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.individual-stock-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.individual-stock-card h4 {
+  margin: 0 0 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stock-code {
+  background: var(--accent);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
 /* Footer */
 .footer {
   text-align: center;
@@ -392,10 +552,90 @@ tbody tr:hover {
   text-decoration: underline;
 }
 
+/* Chart and Visualization Responsiveness */
+.chart-container {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-container canvas,
+.chart-container svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Chart responsive sizing */
+@media (max-width: 768px) {
+  .chart-container {
+    min-height: 250px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Ensure charts don't overflow on mobile */
+  .chart-col {
+    flex: 1 1 100%;
+    order: -1; /* Charts appear first on mobile */
+  }
+  
+  .table-col {
+    flex: 1 1 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .chart-container {
+    min-height: 300px;
+  }
+}
+
+/* Data visualization text scaling */
+.chart-text,
+.chart-label {
+  font-size: clamp(10px, 2vw, 14px);
+}
+
+/* Loading states for better UX */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 15, 35, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+  z-index: 20;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
+}
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
 }
 
 ::-webkit-scrollbar-track {

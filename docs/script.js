@@ -457,6 +457,11 @@ function initNavigation() {
         loadTargetBrokers();
         loadBrokerTrends();
       }
+
+      // Load AI analysis data on first click
+      if (targetSection === "ai-analysis") {
+        loadAIAnalysis();
+      }
     });
   });
 }
@@ -501,8 +506,294 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize navigation
   initNavigation();
 
+  // Add report selector handler
+  const reportSelect = document.getElementById("reportSelect");
+  if (reportSelect) {
+    reportSelect.addEventListener("change", () => {
+      loadFullReport(reportSelect.value);
+    });
+  }
+
   // Load initial data
   input.value = "2330";
   loadStock("2330");
   loadRanking();
 });
+
+// ========== AI Analysis Functions ==========
+
+async function loadAIAnalysis() {
+  try {
+    await Promise.all([
+      loadTrendAnalysis(),
+      loadSentimentAnalysis(), 
+      loadRecommendations(),
+      loadWatchlists(),
+      loadIndividualAnalysis()
+    ]);
+  } catch (error) {
+    console.error("Failed to load AI analysis:", error);
+  }
+}
+
+async function loadTrendAnalysis() {
+  const container = document.getElementById("trendAnalysisContent");
+  try {
+    const data = await fetchJson("data/ai_analysis/trend_analysis_20d.json");
+    
+    let html = `<h4>20日法人持股趨勢分析</h4>`;
+    
+    // AI 分析摘要
+    if (data.ai_insights?.summary) {
+      html += `<div class="analysis-summary">${data.ai_insights.summary}</div>`;
+    }
+    
+    // 增持股票
+    if (data.top_gainers && data.top_gainers.length > 0) {
+      html += `<h4>📈 法人增持前三名</h4><ul>`;
+      data.top_gainers.slice(0, 3).forEach(stock => {
+        const change = stock.change || 0;
+        const currentRatio = stock.three_inst_ratio || 0;
+        html += `<li><strong>${stock.code} ${stock.name}</strong> (${stock.market}) <br>
+                 增持 <span class="net-negative">+${change.toFixed(2)}%</span> | 
+                 目前持股 ${currentRatio.toFixed(1)}%</li>`;
+      });
+      html += `</ul>`;
+    }
+    
+    // 減持股票
+    if (data.top_decliners && data.top_decliners.length > 0) {
+      html += `<h4>📉 法人減持前三名</h4><ul>`;
+      data.top_decliners.slice(0, 3).forEach(stock => {
+        const change = stock.change || 0;
+        const currentRatio = stock.three_inst_ratio || 0;
+        html += `<li><strong>${stock.code} ${stock.name}</strong> (${stock.market}) <br>
+                 減持 <span class="net-positive">${change.toFixed(2)}%</span> | 
+                 目前持股 ${currentRatio.toFixed(1)}%</li>`;
+      });
+      html += `</ul>`;
+    }
+    
+    // 趨勢統計
+    if (data.ai_insights?.key_trends) {
+      const trends = data.ai_insights.key_trends;
+      html += `<div class="metric-grid">
+        <div class="metric-item">
+          <div class="metric-label">增持股數量</div>
+          <div class="metric-value">${trends.gainer_count || 'N/A'}檔</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-label">平均增持幅度</div>
+          <div class="metric-value">+${(trends.avg_gainer_change || 0).toFixed(1)}%</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-label">減持股數量</div>
+          <div class="metric-value">${trends.decliner_count || 'N/A'}檔</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-label">平均減持幅度</div>
+          <div class="metric-value">${(trends.avg_decliner_change || 0).toFixed(1)}%</div>
+        </div>
+      </div>`;
+    }
+
+    container.innerHTML = html;
+  } catch (error) {
+    console.error("Trend analysis error:", error);
+    container.innerHTML = "趨勢分析數據載入失敗";
+  }
+}
+
+async function loadSentimentAnalysis() {
+  const container = document.getElementById("sentimentAnalysisContent");
+  try {
+    const data = await fetchJson("data/ai_analysis/market_sentiment_analysis.json");
+    
+    let html = `<h4>市場情緒指標</h4>`;
+    html += `<div class="analysis-summary">整體情緒：<strong>${data.overall_sentiment || "中性"}</strong></div>`;
+    
+    if (data.sentiment_summary) {
+      html += `<p>${data.sentiment_summary}</p>`;
+    }
+
+    container.innerHTML = html;
+  } catch (error) {
+    container.innerHTML = "情緒分析數據載入失敗";
+  }
+}
+
+async function loadRecommendations() {
+  const container = document.getElementById("recommendationsContent");
+  try {
+    const data = await fetchJson("data/ai_analysis/stock_recommendations.json");
+    
+    let html = "";
+    
+    if (data.recommendations && data.recommendations.length > 0) {
+      data.recommendations.forEach(stock => {
+        html += `
+          <div class="stock-recommendation">
+            <h4>
+              ${stock.stock_code} ${stock.stock_name}
+              <span class="recommendation-strength">${stock.recommendation_strength}</span>
+            </h4>
+            <div class="metric-grid">
+              <div class="metric-item">
+                <div class="metric-label">法人持股</div>
+                <div class="metric-value">${stock.key_metrics?.current_inst_ratio?.toFixed(1) || 'N/A'}%</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-label">動能評分</div>
+                <div class="metric-value">${stock.key_metrics?.momentum_score?.toFixed(2) || 'N/A'}</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-label">品質評分</div>
+                <div class="metric-value">${stock.key_metrics?.quality_score?.toFixed(2) || 'N/A'}</div>
+              </div>
+            </div>
+            <div class="analysis-summary">
+              ${stock.investment_thesis || "投資論述載入中..."}
+            </div>
+          </div>
+        `;
+      });
+    } else {
+      html = "目前無推薦股票";
+    }
+
+    container.innerHTML = html;
+  } catch (error) {
+    container.innerHTML = "推薦數據載入失敗";
+  }
+}
+
+async function loadWatchlists() {
+  const container = document.getElementById("watchlistContent");
+  try {
+    const [momentum, quality, activity] = await Promise.all([
+      fetchJson("data/ai_analysis/watchlist_momentum.json"),
+      fetchJson("data/ai_analysis/watchlist_quality.json"), 
+      fetchJson("data/ai_analysis/watchlist_activity.json")
+    ]);
+
+    let html = `
+      <h4>動能觀察清單</h4>
+      <p>標準：${momentum.criteria?.focus || "動能分析"}</p>
+      <p>篩選結果：${momentum.metadata?.final_selection || 0} 檔股票</p>
+      
+      <h4>品質觀察清單</h4>
+      <p>標準：${quality.criteria?.focus || "品質分析"}</p>
+      <p>篩選結果：${quality.metadata?.final_selection || 0} 檔股票</p>
+      
+      <h4>活躍度觀察清單</h4>
+      <p>標準：${activity.criteria?.focus || "活躍度分析"}</p>
+      <p>篩選結果：${activity.metadata?.final_selection || 0} 檔股票</p>
+    `;
+
+    container.innerHTML = html;
+  } catch (error) {
+    container.innerHTML = "觀察清單載入失敗";
+  }
+}
+
+async function loadIndividualAnalysis() {
+  const container = document.getElementById("individualAnalysisContent");
+  try {
+    const stockCodes = ["1560", "6944", "6139"];
+    const analysisPromises = stockCodes.map(code => 
+      fetchJson(`data/ai_analysis/individual_analysis_${code}.json`)
+    );
+    
+    const analyses = await Promise.all(analysisPromises);
+    
+    let html = "";
+    analyses.forEach(data => {
+      if (data) {
+        const totalHolding = data.current_holdings?.total_ratio || 0;
+        const foreignTrend = data.ai_insights?.trend_metrics?.foreign_trend_direction || "持平";
+        const trustTrend = data.ai_insights?.trend_metrics?.trust_trend_direction || "持平";
+        const dealerTrend = data.ai_insights?.trend_metrics?.dealer_trend_direction || "持平";
+        
+        html += `
+          <div class="individual-stock-card">
+            <h4>
+              ${data.stock_name || "N/A"}
+              <span class="stock-code">${data.stock_code}</span>
+            </h4>
+            <div class="metric-grid">
+              <div class="metric-item">
+                <div class="metric-label">法人合計持股</div>
+                <div class="metric-value">${totalHolding.toFixed(1)}%</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-label">外資持股</div>
+                <div class="metric-value">${(data.current_holdings?.foreign_ratio || 0).toFixed(1)}%</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-label">投信持股</div>
+                <div class="metric-value">${(data.current_holdings?.trust_ratio || 0).toFixed(1)}%</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-label">自營商持股</div>
+                <div class="metric-value">${(data.current_holdings?.dealer_ratio || 0).toFixed(1)}%</div>
+              </div>
+            </div>
+            <div class="metric-grid">
+              <div class="metric-item">
+                <div class="metric-label">外資趨勢</div>
+                <div class="metric-value ${foreignTrend === '上升' ? 'net-negative' : foreignTrend === '下降' ? 'net-positive' : ''}">${foreignTrend}</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-label">投信趨勢</div>
+                <div class="metric-value ${trustTrend === '上升' ? 'net-negative' : trustTrend === '下降' ? 'net-positive' : ''}">${trustTrend}</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-label">自營趨勢</div>
+                <div class="metric-value ${dealerTrend === '上升' ? 'net-negative' : dealerTrend === '下降' ? 'net-positive' : ''}">${dealerTrend}</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-label">分析天數</div>
+                <div class="metric-value">${data.analysis_period_days || 'N/A'}天</div>
+              </div>
+            </div>
+            <div class="analysis-summary">
+              <h4>AI 投資洞察</h4>
+              <p><strong>摘要：</strong>${data.ai_insights?.summary || "分析摘要載入中..."}</p>
+              <div class="risk-factors">
+                <strong>詳細分析：</strong>
+                <div style="white-space: pre-line; margin-top: 0.5rem; line-height: 1.5;">
+                  ${data.ai_insights?.detailed_analysis || "詳細分析載入中..."}
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    });
+
+    if (html === "") {
+      html = "個股分析數據載入中...";
+    }
+
+    container.innerHTML = html;
+  } catch (error) {
+    console.error("Individual analysis error:", error);
+    container.innerHTML = "個股分析載入失敗：" + error.message;
+  }
+}
+
+async function loadFullReport(reportType) {
+  const container = document.getElementById("fullReportContent");
+  
+  if (!reportType) {
+    container.innerHTML = "請選擇一個報告查看詳細內容";
+    return;
+  }
+
+  try {
+    const data = await fetchJson(`data/ai_analysis/${reportType}.json`);
+    container.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+  } catch (error) {
+    container.innerHTML = "報告載入失敗";
+  }
+}

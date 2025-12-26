@@ -20,6 +20,7 @@
     <nav class="main-nav">
       <button class="nav-btn active" data-section="institutional">三大法人</button>
       <button class="nav-btn" data-section="broker">券商分點</button>
+      <button class="nav-btn" data-section="ai-analysis">AI智能分析</button>
     </nav>
   </header>
 
@@ -180,6 +181,84 @@
           <tbody>
           </tbody>
         </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI 智能分析區塊 -->
+  <section id="ai-analysis" class="section">
+    <div class="card">
+      <h2>🤖 AI 智能分析</h2>
+      <p class="subtitle">
+        運用 GPT-4 模型深度分析法人持股趨勢、券商行為模式、市場情緒與個股推薦
+      </p>
+    </div>
+
+    <!-- 分析報告摘要 -->
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <h3>📊 趨勢分析報告</h3>
+          <div id="trendAnalysisContent" class="analysis-content">
+            載入中...
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <h3>💭 市場情緒分析</h3>
+          <div id="sentimentAnalysisContent" class="analysis-content">
+            載入中...
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <h3>⭐ 股票推薦</h3>
+          <div id="recommendationsContent" class="analysis-content">
+            載入中...
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <h3>🎯 觀察清單</h3>
+          <div id="watchlistContent" class="analysis-content">
+            載入中...
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 個股深度分析 -->
+    <div class="card">
+      <h3>🔍 個股深度分析</h3>
+      <div id="individualAnalysisContent" class="broker-grid">
+        載入中...
+      </div>
+    </div>
+
+    <!-- 分析報告詳情 -->
+    <div class="card">
+      <h3>📋 完整分析報告</h3>
+      <div class="controls">
+        <div class="control-block">
+          <label for="reportSelect">選擇報告：</label>
+          <select id="reportSelect">
+            <option value="">請選擇報告...</option>
+            <option value="trend_analysis_5d">5日趨勢分析</option>
+            <option value="trend_analysis_20d">20日趨勢分析</option>
+            <option value="trend_analysis_60d">60日趨勢分析</option>
+            <option value="market_sentiment_analysis">市場情緒分析</option>
+            <option value="stock_recommendations">股票推薦</option>
+          </select>
+        </div>
+      </div>
+      <div id="fullReportContent" class="analysis-report">
+        請選擇一個報告查看詳細內容
       </div>
     </div>
   </section>
