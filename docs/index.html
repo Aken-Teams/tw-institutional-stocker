@@ -106,81 +106,116 @@
     <div class="card">
       <h2>🏦 券商分點主力進出追蹤</h2>
       <p class="subtitle">
-        追蹤外資券商（高盛、摩根、美林）及國內主力（凱基、元大、富邦）的買賣超情況。資料來源：富邦 e-Broker。
+        追蹤外資券商（高盛、摩根、美林）及國內主力（凱基、元大、富邦）的買賣超情況
       </p>
-    </div>
-
-    <!-- 券商趨勢圖 -->
-    <div class="card">
-      <div class="card-header">
-        <h3>📈 目標券商累計買賣超趨勢</h3>
-        <div class="control-block">
-          <label for="brokerSelect">選擇券商：</label>
-          <select id="brokerSelect">
-            <option value="ALL">全部目標券商</option>
-          </select>
+      <div id="brokerSummaryStats" class="broker-stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">📊</div>
+          <div class="stat-info">
+            <div class="stat-value" id="totalBrokers">載入中...</div>
+            <div class="stat-label">活躍券商</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📈</div>
+          <div class="stat-info">
+            <div class="stat-value net-negative" id="totalBuyVolume">載入中...</div>
+            <div class="stat-label">總買超(張)</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📉</div>
+          <div class="stat-info">
+            <div class="stat-value net-positive" id="totalSellVolume">載入中...</div>
+            <div class="stat-label">總賣超(張)</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-info">
+            <div class="stat-value" id="targetStocks">載入中...</div>
+            <div class="stat-label">追蹤股票</div>
+          </div>
         </div>
       </div>
-      <canvas id="brokerTrendChart" height="200"></canvas>
     </div>
 
+    <!-- 券商活躍度視覺化 -->
     <div class="row">
       <div class="col">
         <div class="card">
-          <div class="card-header">
-            <h3>📊 今日券商買賣超排名</h3>
-            <span id="brokerUpdateTime" class="update-time"></span>
-          </div>
-          <div class="table-container">
-            <table id="brokerRankTable">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>券商分點</th>
-                  <th>買賣超(張)</th>
-                  <th>買超</th>
-                  <th>賣超</th>
-                  <th>股票數</th>
-                </tr>
-              </thead>
-
-              <tbody>
-              </tbody>
-            </table>
-          </div>
+          <h3>🏆 券商買賣超排行榜</h3>
+          <canvas id="brokerRankingChart" height="300"></canvas>
         </div>
       </div>
       <div class="col">
         <div class="card">
-          <h3>🎯 目標券商追蹤</h3>
-          <p class="subtitle target-list">
-            追蹤：凱基、美林、摩根、高盛、瑞銀、野村、大和、麥格理、元大、富邦
-          </p>
-          <div id="targetBrokersContent" class="broker-grid">
+          <h3>📈 券商累計趨勢圖</h3>
+          <div class="control-block">
+            <label for="brokerSelect">選擇券商：</label>
+            <select id="brokerSelect">
+              <option value="ALL">全部目標券商</option>
+            </select>
           </div>
+          <canvas id="brokerTrendChart" height="250"></canvas>
         </div>
       </div>
     </div>
 
+    <!-- 券商交易熱力圖 -->
     <div class="card">
-      <h3>📋 今日交易明細</h3>
-      <p id="brokerTradesStatus" class="subtitle">載入中...</p>
+      <h3>🔥 券商交易活躍度熱力圖</h3>
+      <div id="brokerHeatmap" class="broker-heatmap-container">
+        載入中...
+      </div>
+    </div>
+
+    <!-- 目標券商追蹤卡片 -->
+    <div class="card">
+      <h3>🎯 重點券商即時監控</h3>
+      <div id="targetBrokersContent" class="target-brokers-dashboard">
+        載入中...
+      </div>
+    </div>
+
+    <!-- 詳細交易資料 -->
+    <div class="card">
+      <div class="card-header">
+        <h3>📋 今日交易明細</h3>
+        <div class="trade-filters">
+          <select id="stockFilter">
+            <option value="ALL">全部股票</option>
+          </select>
+          <select id="brokerFilter">
+            <option value="ALL">全部券商</option>
+          </select>
+          <select id="actionFilter">
+            <option value="ALL">全部操作</option>
+            <option value="BUY">僅買超</option>
+            <option value="SELL">僅賣超</option>
+          </select>
+        </div>
+      </div>
+      <div id="brokerTradesStatus" class="trades-summary">載入中...</div>
       <div class="table-container large">
-        <table id="brokerTradesTable">
-          <thead>
-            <tr>
-              <th>日期</th>
-              <th>股票</th>
-              <th>券商分點</th>
-              <th>買進</th>
-              <th>賣出</th>
-              <th>買賣超</th>
-              <th>佔比%</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
+        <div class="table-wrapper">
+          <table id="brokerTradesTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>股票</th>
+                <th>券商分點</th>
+                <th>買進(張)</th>
+                <th>賣出(張)</th>
+                <th>買賣超</th>
+                <th>佔比%</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>
@@ -198,7 +233,8 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <h3>📊 趨勢分析報告</h3>
+          <h3>📊 法人持股趨勢圖</h3>
+          <canvas id="institutionalTrendChart" height="250"></canvas>
           <div id="trendAnalysisContent" class="analysis-content">
             載入中...
           </div>
@@ -206,7 +242,10 @@
       </div>
       <div class="col">
         <div class="card">
-          <h3>💭 市場情緒分析</h3>
+          <h3>💭 市場情緒儀表板</h3>
+          <div class="sentiment-dashboard">
+            <canvas id="sentimentGauge" height="200"></canvas>
+          </div>
           <div id="sentimentAnalysisContent" class="analysis-content">
             載入中...
           </div>
@@ -217,7 +256,8 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <h3>⭐ 股票推薦</h3>
+          <h3>⭐ 推薦股票評分雷達圖</h3>
+          <canvas id="recommendationRadarChart" height="300"></canvas>
           <div id="recommendationsContent" class="analysis-content">
             載入中...
           </div>
@@ -225,8 +265,8 @@
       </div>
       <div class="col">
         <div class="card">
-          <h3>🎯 觀察清單</h3>
-          <div id="watchlistContent" class="analysis-content">
+          <h3>🎯 持股變化熱力圖</h3>
+          <div id="holdingHeatmap" class="heatmap-container">
             載入中...
           </div>
         </div>
@@ -264,8 +304,7 @@
   </section>
 
   <footer class="footer">
-    <p>資料每日自動更新 | GitHub: <a href="https://github.com/voidful/tw-institutional-stocker"
-        target="_blank">tw-institutional-stocker</a></p>
+    <p>資料每日自動更新</p>
   </footer>
 
   <script src="script.js"></script>

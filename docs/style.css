@@ -394,6 +394,271 @@ tbody tr:hover {
   line-height: 1.6;
 }
 
+/* Broker Stats Grid */
+.broker-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--border);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.stat-info {
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Broker Heatmap */
+.broker-heatmap-container {
+  padding: 1rem 0;
+}
+
+.broker-heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.broker-heatmap-cell {
+  aspect-ratio: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  padding: 0.75rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: 1px solid var(--border);
+}
+
+.broker-heatmap-cell:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.broker-heatmap-cell.high-activity {
+  background: linear-gradient(135deg, rgba(46, 213, 115, 0.9), rgba(46, 213, 115, 0.6));
+  color: white;
+  border-color: rgba(46, 213, 115, 1);
+}
+
+.broker-heatmap-cell.medium-activity {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.8), rgba(255, 193, 7, 0.5));
+  color: var(--bg);
+  border-color: rgba(255, 193, 7, 1);
+}
+
+.broker-heatmap-cell.low-activity {
+  background: linear-gradient(135deg, rgba(139, 139, 158, 0.6), rgba(139, 139, 158, 0.3));
+  color: var(--text);
+}
+
+.broker-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.broker-volume {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.broker-trend {
+  font-size: 0.7rem;
+  margin-top: 0.25rem;
+}
+
+/* Target Brokers Dashboard */
+.target-brokers-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.target-broker-card {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.target-broker-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.target-broker-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+}
+
+.broker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.broker-name-display {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.broker-status {
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.broker-status.active {
+  background: rgba(46, 213, 115, 0.2);
+  color: var(--success);
+}
+
+.broker-status.inactive {
+  background: rgba(139, 139, 158, 0.2);
+  color: var(--text-muted);
+}
+
+.broker-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.broker-metric {
+  text-align: center;
+  padding: 0.5rem;
+  background: var(--bg-card);
+  border-radius: 8px;
+}
+
+.broker-metric-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.broker-metric-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.broker-activity {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Trade Filters */
+.trade-filters {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.trade-filters select {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.85rem;
+  min-width: 120px;
+}
+
+.trades-summary {
+  background: var(--bg-card);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  border-left: 4px solid var(--accent);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Enhanced Table Styles for Broker */
+.broker-action-badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.broker-action-badge.buy {
+  background: rgba(46, 213, 115, 0.2);
+  color: var(--success);
+}
+
+.broker-action-badge.sell {
+  background: rgba(255, 71, 87, 0.2);
+  color: var(--buy);
+}
+
+.broker-action-badge.neutral {
+  background: rgba(139, 139, 158, 0.2);
+  color: var(--text-muted);
+}
+
 .target-list {
   font-size: 0.8rem;
   background: var(--bg);
@@ -407,6 +672,98 @@ tbody tr:hover {
   line-height: 1.6;
   font-size: 0.9rem;
   color: var(--text);
+}
+
+/* AI Chart Styles */
+.sentiment-dashboard {
+  position: relative;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.heatmap-container {
+  min-height: 300px;
+  position: relative;
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.heatmap-cell {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  border: 1px solid var(--border);
+}
+
+.heatmap-cell:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.heatmap-cell.positive {
+  background: linear-gradient(135deg, rgba(46, 213, 115, 0.8), rgba(46, 213, 115, 0.4));
+  color: white;
+}
+
+.heatmap-cell.negative {
+  background: linear-gradient(135deg, rgba(255, 71, 87, 0.8), rgba(255, 71, 87, 0.4));
+  color: white;
+}
+
+.heatmap-cell.neutral {
+  background: linear-gradient(135deg, rgba(139, 139, 158, 0.6), rgba(139, 139, 158, 0.3));
+  color: var(--text);
+}
+
+.heatmap-cell-code {
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.heatmap-cell-name {
+  font-size: 0.7rem;
+  text-align: center;
+  margin-bottom: 0.2rem;
+}
+
+.heatmap-cell-value {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.legend-color {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
 }
 
 .analysis-content h4 {
@@ -531,6 +888,304 @@ tbody tr:hover {
   border-radius: 4px;
   font-size: 0.7rem;
   font-weight: 500;
+}
+
+/* Report Formatting Styles */
+.report-header {
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.report-header h3 {
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+.report-meta {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0.25rem 0;
+}
+
+.report-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-section:last-child {
+  border-bottom: none;
+}
+
+.report-section h4 {
+  color: var(--accent);
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+}
+
+.report-section h5 {
+  color: var(--text);
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.report-section h6 {
+  color: var(--accent);
+  margin: 1rem 0 0.5rem;
+  font-size: 0.9rem;
+}
+
+.insight-content,
+.sentiment-content,
+.detailed-analysis {
+  background: var(--bg-card);
+  padding: 1rem;
+  border-radius: 8px;
+  line-height: 1.6;
+  border-left: 4px solid var(--success);
+}
+
+.stock-ranking {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rank-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s;
+}
+
+.rank-item:hover {
+  border-color: var(--accent);
+}
+
+.rank-number {
+  background: var(--accent);
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.stock-info {
+  flex: 1;
+}
+
+.stock-metrics {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stat-item {
+  background: var(--bg-card);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.sentiment-indicator {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.sentiment-indicator.悲觀 {
+  background: rgba(255, 71, 87, 0.2);
+  color: var(--buy);
+}
+
+.sentiment-indicator.中性 {
+  background: rgba(255, 193, 7, 0.2);
+  color: var(--warning);
+}
+
+.sentiment-indicator.樂觀 {
+  background: rgba(46, 213, 115, 0.2);
+  color: var(--sell);
+}
+
+.market-context {
+  background: var(--bg-card);
+  padding: 1rem;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+.market-context p {
+  margin: 0.5rem 0;
+}
+
+.criteria-list {
+  background: var(--bg-card);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0;
+}
+
+.criteria-list li {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.recommendation-detail {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.rec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.rec-strength {
+  background: rgba(233, 69, 96, 0.2);
+  color: var(--accent);
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.rec-metrics {
+  margin-bottom: 1rem;
+}
+
+.metric-row {
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.key-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.key-metrics-grid > div {
+  background: var(--bg-card);
+  padding: 0.5rem;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.8rem;
+  border: 1px solid var(--border);
+}
+
+.investment-thesis,
+.risk-analysis {
+  margin-top: 1rem;
+}
+
+.investment-thesis p {
+  background: var(--bg-card);
+  padding: 1rem;
+  border-radius: 8px;
+  line-height: 1.6;
+  margin: 0.5rem 0;
+  border-left: 4px solid var(--success);
+}
+
+.risk-analysis ul {
+  background: rgba(255, 193, 7, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--warning);
+  margin: 0.5rem 0;
+}
+
+.risk-analysis li {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.risk-disclaimer {
+  background: rgba(255, 71, 87, 0.1);
+  border-left: 4px solid var(--buy);
+}
+
+.json-data {
+  background: var(--bg);
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  max-height: 400px;
+  overflow-y: auto;
+  color: var(--text-muted);
+}
+
+/* Mobile responsiveness for reports */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+  
+  .key-metrics-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.5rem;
+  }
+  
+  .rec-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .rank-item {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .rank-number {
+    align-self: flex-start;
+  }
 }
 
 /* Footer */
