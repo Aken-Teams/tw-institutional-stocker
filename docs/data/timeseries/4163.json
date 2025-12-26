@@ -548,5 +548,60 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": -0.04225021166853067,
     "three_inst_ratio_change_20": -0.04225021166853067
+  },
+  {
+    "date": "2025-12-15",
+    "code": "4163",
+    "name": "鐿鈦",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -0.052309785875323686,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -0.052309785875323686,
+    "three_inst_ratio_change_20": -0.052309785875323686
+  },
+  {
+    "date": "2025-12-16",
+    "code": "4163",
+    "name": "鐿鈦",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -0.052309785875323686,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -0.052309785875323686,
+    "three_inst_ratio_change_20": -0.052309785875323686
+  },
+  {
+    "date": "2025-12-18",
+    "code": "4163",
+    "name": "鐿鈦",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -0.052309785875323686,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -0.052309785875323686,
+    "three_inst_ratio_change_20": -0.052309785875323686
+  },
+  {
+    "date": "2025-12-19",
+    "code": "4163",
+    "name": "鐿鈦",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -0.052309785875323686,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -0.052309785875323686,
+    "three_inst_ratio_change_20": -0.052309785875323686
+  },
+  {
+    "date": "2025-12-24",
+    "code": "4163",
+    "name": "鐿鈦",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -0.06035744524075811,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -0.06035744524075811,
+    "three_inst_ratio_change_20": -0.06035744524075811
   }
 ]

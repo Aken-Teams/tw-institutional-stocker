@@ -691,5 +691,82 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 2.756170625431744,
     "three_inst_ratio_change_20": -0.30110598627244967
+  },
+  {
+    "date": "2025-12-15",
+    "code": "6138",
+    "name": "茂達",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 2.7535137361177533,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 2.7535137361177533,
+    "three_inst_ratio_change_20": -0.29974449820722615
+  },
+  {
+    "date": "2025-12-16",
+    "code": "6138",
+    "name": "茂達",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 2.7359397417503586,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 2.7359397417503586,
+    "three_inst_ratio_change_20": -0.31731849257462086
+  },
+  {
+    "date": "2025-12-18",
+    "code": "6138",
+    "name": "茂達",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 2.7638370795472658,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 2.7638370795472658,
+    "three_inst_ratio_change_20": -0.28825850425599464
+  },
+  {
+    "date": "2025-12-19",
+    "code": "6138",
+    "name": "茂達",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 2.8222886444550723,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 2.8222886444550723,
+    "three_inst_ratio_change_20": -0.22980693934818808
+  },
+  {
+    "date": "2025-12-22",
+    "code": "6138",
+    "name": "茂達",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 2.9152797704447635,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 2.9152797704447635,
+    "three_inst_ratio_change_20": -0.1368158133584969
+  },
+  {
+    "date": "2025-12-23",
+    "code": "6138",
+    "name": "茂達",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 2.916608215101759,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 2.916608215101759,
+    "three_inst_ratio_change_20": -0.1676343877352151
+  },
+  {
+    "date": "2025-12-24",
+    "code": "6138",
+    "name": "茂達",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 2.9179366597587544,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 2.9179366597587544,
+    "three_inst_ratio_change_20": -0.1663059430782199
   }
 ]

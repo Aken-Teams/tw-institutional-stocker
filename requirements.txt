@@ -3,3 +3,5 @@ pandas
 python-dateutil
 playwright
 beautifulsoup4
+python-dotenv
+openai

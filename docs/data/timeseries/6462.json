@@ -691,5 +691,82 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 0.01862998304649625,
     "three_inst_ratio_change_20": -0.005479406778381251
+  },
+  {
+    "date": "2025-12-15",
+    "code": "6462",
+    "name": "神盾",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.01862998304649625,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.01862998304649625,
+    "three_inst_ratio_change_20": -0.005479406778381251
+  },
+  {
+    "date": "2025-12-16",
+    "code": "6462",
+    "name": "神盾",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.01862998304649625,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.01862998304649625,
+    "three_inst_ratio_change_20": -0.005479406778381251
+  },
+  {
+    "date": "2025-12-18",
+    "code": "6462",
+    "name": "神盾",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.01862998304649625,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.01862998304649625,
+    "three_inst_ratio_change_20": -0.005479406778381251
+  },
+  {
+    "date": "2025-12-19",
+    "code": "6462",
+    "name": "神盾",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.01862998304649625,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.01862998304649625,
+    "three_inst_ratio_change_20": -0.005479406778381251
+  },
+  {
+    "date": "2025-12-22",
+    "code": "6462",
+    "name": "神盾",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.01862998304649625,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.01862998304649625,
+    "three_inst_ratio_change_20": -0.005479406778381251
+  },
+  {
+    "date": "2025-12-23",
+    "code": "6462",
+    "name": "神盾",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.01862998304649625,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.01862998304649625,
+    "three_inst_ratio_change_20": -0.005479406778381251
+  },
+  {
+    "date": "2025-12-24",
+    "code": "6462",
+    "name": "神盾",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.01862998304649625,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.01862998304649625,
+    "three_inst_ratio_change_20": -0.005479406778381251
   }
 ]

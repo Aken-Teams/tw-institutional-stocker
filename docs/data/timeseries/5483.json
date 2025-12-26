@@ -691,5 +691,82 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 1.6098447368240847,
     "three_inst_ratio_change_20": 0.4356342296994584
+  },
+  {
+    "date": "2025-12-15",
+    "code": "5483",
+    "name": "中美晶",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 1.5541173608936671,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 1.5541173608936671,
+    "three_inst_ratio_change_20": 0.38131042459138675
+  },
+  {
+    "date": "2025-12-16",
+    "code": "5483",
+    "name": "中美晶",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 1.2995864982107412,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 1.2995864982107412,
+    "three_inst_ratio_change_20": 0.05440209316949596
+  },
+  {
+    "date": "2025-12-18",
+    "code": "5483",
+    "name": "中美晶",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 1.0275808668849828,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 1.0275808668849828,
+    "three_inst_ratio_change_20": -0.21357154704060366
+  },
+  {
+    "date": "2025-12-19",
+    "code": "5483",
+    "name": "中美晶",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.8705368870958475,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.8705368870958475,
+    "three_inst_ratio_change_20": -0.48891486978190024
+  },
+  {
+    "date": "2025-12-22",
+    "code": "5483",
+    "name": "中美晶",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.5397724787680321,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.5397724787680321,
+    "three_inst_ratio_change_20": -0.9779275216644235
+  },
+  {
+    "date": "2025-12-23",
+    "code": "5483",
+    "name": "中美晶",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.6520756112148185,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.6520756112148185,
+    "three_inst_ratio_change_20": -0.8771648604235915
+  },
+  {
+    "date": "2025-12-24",
+    "code": "5483",
+    "name": "中美晶",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.6554031657299731,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.6554031657299731,
+    "three_inst_ratio_change_20": -0.8791753976504452
   }
 ]

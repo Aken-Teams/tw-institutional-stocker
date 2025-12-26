@@ -1,0 +1,69 @@
+{
+  "sentiment_data": {
+    "institutional": {
+      "by_timeframe": {
+        "5d": {
+          "avg_gain": 3.8353433968847694,
+          "avg_loss": -4.354488868135034,
+          "gain_magnitude": 38.353433968847696,
+          "loss_magnitude": 43.54488868135034,
+          "momentum_ratio": 0.4683054881680773,
+          "sentiment_label": "中性"
+        },
+        "20d": {
+          "avg_gain": 5.422825904246313,
+          "avg_loss": -7.786897526234189,
+          "gain_magnitude": 54.22825904246313,
+          "loss_magnitude": 77.86897526234189,
+          "momentum_ratio": 0.41051774723258216,
+          "sentiment_label": "悲觀"
+        },
+        "60d": {
+          "avg_gain": 83.36330183600788,
+          "avg_loss": -1.221633637278964,
+          "gain_magnitude": 833.6330183600787,
+          "loss_magnitude": 12.216336372789641,
+          "momentum_ratio": 0.9855573143084707,
+          "sentiment_label": "強烈樂觀"
+        }
+      },
+      "overall_direction": "橫盤整理",
+      "strength": "強",
+      "consistency": "低"
+    },
+    "momentum": {
+      "average_foreign_holding": 0.0,
+      "average_trust_holding": 0.09010968382997953,
+      "average_dealer_holding": 0.0,
+      "average_total_institutional": 0.09010968382997953,
+      "high_institutional_stocks": 0,
+      "low_institutional_stocks": 2229,
+      "market_coverage": 0.061462539255271426
+    },
+    "cross_market": {
+      "twse_average_institutional": 0.0,
+      "tpex_average_institutional": 0.21142577395476247,
+      "market_preference": "上櫃",
+      "cross_market_divergence": 0.21142577395476247,
+      "twse_stock_count": 1279,
+      "tpex_stock_count": 950
+    }
+  },
+  "ai_insights": null,
+  "sentiment_score": {
+    "score": -0.236,
+    "label": "悲觀",
+    "confidence": "低",
+    "components": {
+      "institutional": 0.0,
+      "broker": -0.8770749214894571,
+      "momentum": 0.1,
+      "cross_market": null
+    }
+  },
+  "metadata": {
+    "generated_at": "2025-12-26T22:35:55.197127",
+    "model_used": "gpt-4",
+    "analysis_type": "market_sentiment"
+  }
+}

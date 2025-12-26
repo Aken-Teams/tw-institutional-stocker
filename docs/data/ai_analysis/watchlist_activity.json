@@ -1,0 +1,15 @@
+{
+  "watchlist": [],
+  "focus_area": "activity",
+  "criteria": {
+    "focus": "券商交易活躍度",
+    "threshold": "活躍評分 > 0.5",
+    "timeframe": "近期交易日"
+  },
+  "metadata": {
+    "generated_at": "2025-12-26T22:36:39.292731",
+    "total_screened": 2,
+    "focus_filtered": 0,
+    "final_selection": 0
+  }
+}

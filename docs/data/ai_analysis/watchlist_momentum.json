@@ -1,0 +1,15 @@
+{
+  "watchlist": [],
+  "focus_area": "momentum",
+  "criteria": {
+    "focus": "近期法人持股動能",
+    "threshold": "動能評分 > 0.6",
+    "timeframe": "5-20個交易日"
+  },
+  "metadata": {
+    "generated_at": "2025-12-26T22:36:37.227162",
+    "total_screened": 2,
+    "focus_filtered": 0,
+    "final_selection": 0
+  }
+}

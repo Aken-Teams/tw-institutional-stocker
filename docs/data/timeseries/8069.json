@@ -691,5 +691,82 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 0.4197555027666777,
     "three_inst_ratio_change_20": -0.046297304561397135
+  },
+  {
+    "date": "2025-12-15",
+    "code": "8069",
+    "name": "元太",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.4191096172341017,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.4191096172341017,
+    "three_inst_ratio_change_20": -0.046302261539363565
+  },
+  {
+    "date": "2025-12-16",
+    "code": "8069",
+    "name": "元太",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.41922632362762763,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.41922632362762763,
+    "three_inst_ratio_change_20": -0.0460985906201104
+  },
+  {
+    "date": "2025-12-18",
+    "code": "8069",
+    "name": "元太",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.4193132881533548,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.4193132881533548,
+    "three_inst_ratio_change_20": -0.03945780550652889
+  },
+  {
+    "date": "2025-12-19",
+    "code": "8069",
+    "name": "元太",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.41740006858735607,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.41740006858735607,
+    "three_inst_ratio_change_20": -0.04093620244389157
+  },
+  {
+    "date": "2025-12-22",
+    "code": "8069",
+    "name": "元太",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.4173131040616289,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.4173131040616289,
+    "three_inst_ratio_change_20": -0.041103087368762004
+  },
+  {
+    "date": "2025-12-23",
+    "code": "8069",
+    "name": "元太",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.4167043523815384,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.4167043523815384,
+    "three_inst_ratio_change_20": -0.04275115209581848
+  },
+  {
+    "date": "2025-12-24",
+    "code": "8069",
+    "name": "元太",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.4160086361757206,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.4160086361757206,
+    "three_inst_ratio_change_20": -0.04283359446620799
   }
 ]

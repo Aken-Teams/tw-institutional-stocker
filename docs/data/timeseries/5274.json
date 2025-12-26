@@ -691,5 +691,82 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 4.608164737504756,
     "three_inst_ratio_change_20": 1.8169264960941263
+  },
+  {
+    "date": "2025-12-15",
+    "code": "5274",
+    "name": "信驊",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 4.617952402058213,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 4.617952402058213,
+    "three_inst_ratio_change_20": 1.8320047901359384
+  },
+  {
+    "date": "2025-12-16",
+    "code": "5274",
+    "name": "信驊",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 4.841436527590567,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 4.841436527590567,
+    "three_inst_ratio_change_20": 1.775873856579235
+  },
+  {
+    "date": "2025-12-18",
+    "code": "5274",
+    "name": "信驊",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 4.96841163531109,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 4.96841163531109,
+    "three_inst_ratio_change_20": 1.8962356774393143
+  },
+  {
+    "date": "2025-12-19",
+    "code": "5274",
+    "name": "信驊",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 5.025021370836489,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 5.025021370836489,
+    "three_inst_ratio_change_20": 1.802485722905661
+  },
+  {
+    "date": "2025-12-22",
+    "code": "5274",
+    "name": "信驊",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 4.9879869644180035,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 4.9879869644180035,
+    "three_inst_ratio_change_20": 1.8051310376498386
+  },
+  {
+    "date": "2025-12-23",
+    "code": "5274",
+    "name": "信驊",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 5.000949006664474,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 5.000949006664474,
+    "three_inst_ratio_change_20": 1.5411683059020809
+  },
+  {
+    "date": "2025-12-24",
+    "code": "5274",
+    "name": "信驊",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 4.995655731861374,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 4.995655731861374,
+    "three_inst_ratio_change_20": 1.501485939424673
   }
 ]

@@ -691,5 +691,82 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 0.43002714832675304,
     "three_inst_ratio_change_20": -0.0013797662513158615
+  },
+  {
+    "date": "2025-12-15",
+    "code": "5508",
+    "name": "永信建",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.42956722624298116,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.42956722624298116,
+    "three_inst_ratio_change_20": -0.0013797662513157505
+  },
+  {
+    "date": "2025-12-16",
+    "code": "5508",
+    "name": "永信建",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -0.8214208416166642,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -0.8214208416166642,
+    "three_inst_ratio_change_20": -1.2523678341109612
+  },
+  {
+    "date": "2025-12-18",
+    "code": "5508",
+    "name": "永信建",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -2.0724089094763096,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -2.0724089094763096,
+    "three_inst_ratio_change_20": -2.5033559019706066
+  },
+  {
+    "date": "2025-12-19",
+    "code": "5508",
+    "name": "永信建",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -3.323396977335955,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -3.323396977335955,
+    "three_inst_ratio_change_20": -3.75388404774648
+  },
+  {
+    "date": "2025-12-22",
+    "code": "5508",
+    "name": "永信建",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -4.574844967279372,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -4.574844967279372,
+    "three_inst_ratio_change_20": -5.005332037689897
+  },
+  {
+    "date": "2025-12-23",
+    "code": "5508",
+    "name": "永信建",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -5.825833035139018,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -5.825833035139018,
+    "three_inst_ratio_change_20": -6.256320105549543
+  },
+  {
+    "date": "2025-12-24",
+    "code": "5508",
+    "name": "永信建",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -7.076821102998664,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -7.076821102998664,
+    "three_inst_ratio_change_20": -7.507308173409188
   }
 ]

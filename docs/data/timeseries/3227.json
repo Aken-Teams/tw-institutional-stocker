@@ -691,5 +691,82 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 3.336429758152574,
     "three_inst_ratio_change_20": -0.6320411082276771
+  },
+  {
+    "date": "2025-12-15",
+    "code": "3227",
+    "name": "原相",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 3.336429758152574,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 3.336429758152574,
+    "three_inst_ratio_change_20": -0.4272758102122629
+  },
+  {
+    "date": "2025-12-16",
+    "code": "3227",
+    "name": "原相",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 3.4351439734824805,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 3.4351439734824805,
+    "three_inst_ratio_change_20": -0.25385894544350807
+  },
+  {
+    "date": "2025-12-18",
+    "code": "3227",
+    "name": "原相",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 3.4351439734824805,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 3.4351439734824805,
+    "three_inst_ratio_change_20": -0.1844921995360056
+  },
+  {
+    "date": "2025-12-19",
+    "code": "3227",
+    "name": "原相",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 3.434476985541062,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 3.434476985541062,
+    "three_inst_ratio_change_20": -0.2780039089228499
+  },
+  {
+    "date": "2025-12-22",
+    "code": "3227",
+    "name": "原相",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 3.433809997599644,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 3.433809997599644,
+    "three_inst_ratio_change_20": -0.25199137920753634
+  },
+  {
+    "date": "2025-12-23",
+    "code": "3227",
+    "name": "原相",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 3.433809997599644,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 3.433809997599644,
+    "three_inst_ratio_change_20": -0.23531668067207923
+  },
+  {
+    "date": "2025-12-24",
+    "code": "3227",
+    "name": "原相",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 3.4220443303130255,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 3.4220443303130255,
+    "three_inst_ratio_change_20": -0.24708234795869766
   }
 ]

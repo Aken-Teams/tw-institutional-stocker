@@ -691,5 +691,82 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": -0.4907975705655432,
     "three_inst_ratio_change_20": -2.3662445451329654
+  },
+  {
+    "date": "2025-12-15",
+    "code": "6147",
+    "name": "頎邦",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -0.4916033793304242,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -0.4916033793304242,
+    "three_inst_ratio_change_20": -2.3655730378288977
+  },
+  {
+    "date": "2025-12-16",
+    "code": "6147",
+    "name": "頎邦",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -0.42254153913629383,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -0.42254153913629383,
+    "three_inst_ratio_change_20": -1.9844010491742932
+  },
+  {
+    "date": "2025-12-18",
+    "code": "6147",
+    "name": "頎邦",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -0.42287299514158155,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -0.42287299514158155,
+    "three_inst_ratio_change_20": -1.6493493908761945
+  },
+  {
+    "date": "2025-12-19",
+    "code": "6147",
+    "name": "頎邦",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -0.4247532155929707,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -0.4247532155929707,
+    "three_inst_ratio_change_20": -1.3561064488366452
+  },
+  {
+    "date": "2025-12-22",
+    "code": "6147",
+    "name": "頎邦",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -0.42686644907887117,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -0.42686644907887117,
+    "three_inst_ratio_change_20": -1.0670541152788595
+  },
+  {
+    "date": "2025-12-23",
+    "code": "6147",
+    "name": "頎邦",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -0.42607863670973917,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -0.42607863670973917,
+    "three_inst_ratio_change_20": -0.6833728381304152
+  },
+  {
+    "date": "2025-12-24",
+    "code": "6147",
+    "name": "頎邦",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": -0.4492326114583704,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": -0.4492326114583704,
+    "three_inst_ratio_change_20": -0.44954526525914423
   }
 ]

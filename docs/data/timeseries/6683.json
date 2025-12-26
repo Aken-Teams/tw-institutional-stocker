@@ -691,5 +691,82 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 0.8591921969620929,
     "three_inst_ratio_change_20": 0.04732838373096271
+  },
+  {
+    "date": "2025-12-15",
+    "code": "6683",
+    "name": "雍智科技",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.8591921969620929,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.8591921969620929,
+    "three_inst_ratio_change_20": 0.04732838373096271
+  },
+  {
+    "date": "2025-12-16",
+    "code": "6683",
+    "name": "雍智科技",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.8664734867668564,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.8664734867668564,
+    "three_inst_ratio_change_20": 0.05460967353572621
+  },
+  {
+    "date": "2025-12-18",
+    "code": "6683",
+    "name": "雍智科技",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.48784641691915454,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.48784641691915454,
+    "three_inst_ratio_change_20": -0.3240173963119757
+  },
+  {
+    "date": "2025-12-19",
+    "code": "6683",
+    "name": "雍智科技",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.48784641691915454,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.48784641691915454,
+    "three_inst_ratio_change_20": -0.3240173963119757
+  },
+  {
+    "date": "2025-12-22",
+    "code": "6683",
+    "name": "雍智科技",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.48784641691915454,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.48784641691915454,
+    "three_inst_ratio_change_20": -0.3240173963119757
+  },
+  {
+    "date": "2025-12-23",
+    "code": "6683",
+    "name": "雍智科技",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.48784641691915454,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.48784641691915454,
+    "three_inst_ratio_change_20": -0.3240173963119757
+  },
+  {
+    "date": "2025-12-24",
+    "code": "6683",
+    "name": "雍智科技",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.48784641691915454,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.48784641691915454,
+    "three_inst_ratio_change_20": -0.3240173963119757
   }
 ]

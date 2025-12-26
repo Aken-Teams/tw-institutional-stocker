@@ -1,0 +1,247 @@
+{
+  "top_gainers": [
+    {
+      "code": "2923",
+      "name": "鼎固-KY",
+      "market": "TWSE",
+      "three_inst_ratio": 99.34,
+      "change": 99.34
+    },
+    {
+      "code": "6890",
+      "name": "來億-KY",
+      "market": "TWSE",
+      "three_inst_ratio": 88.09935044105855,
+      "change": 88.09935044105855
+    },
+    {
+      "code": "6230",
+      "name": "尼得科超眾",
+      "market": "TWSE",
+      "three_inst_ratio": 86.99000231633232,
+      "change": 86.99000231633232
+    },
+    {
+      "code": "4560",
+      "name": "強信-KY",
+      "market": "TWSE",
+      "three_inst_ratio": 85.22,
+      "change": 85.22
+    },
+    {
+      "code": "2762",
+      "name": "世界健身-KY",
+      "market": "TWSE",
+      "three_inst_ratio": 82.62,
+      "change": 82.62
+    },
+    {
+      "code": "6415",
+      "name": "矽力*-KY",
+      "market": "TWSE",
+      "three_inst_ratio": 79.8019150993133,
+      "change": 79.8019150993133
+    },
+    {
+      "code": "6781",
+      "name": "AES-KY",
+      "market": "TWSE",
+      "three_inst_ratio": 78.80635799762067,
+      "change": 78.80635799762067
+    },
+    {
+      "code": "1590",
+      "name": "亞德客-KY",
+      "market": "TWSE",
+      "three_inst_ratio": 78.21539250575393,
+      "change": 78.21539250575393
+    },
+    {
+      "code": "6924",
+      "name": "榮惠-KY創",
+      "market": "TWSE",
+      "three_inst_ratio": 77.35,
+      "change": 77.35
+    },
+    {
+      "code": "6965",
+      "name": "中傑-KY",
+      "market": "TWSE",
+      "three_inst_ratio": 77.19,
+      "change": 77.19
+    },
+    {
+      "code": "3711",
+      "name": "日月光投控",
+      "market": "TWSE",
+      "three_inst_ratio": 76.98690347999307,
+      "change": 76.98690347999307
+    },
+    {
+      "code": "6666",
+      "name": "羅麗芬-KY",
+      "market": "TWSE",
+      "three_inst_ratio": 75.16,
+      "change": 75.16
+    },
+    {
+      "code": "2239",
+      "name": "英利-KY",
+      "market": "TWSE",
+      "three_inst_ratio": 73.68,
+      "change": 73.68
+    },
+    {
+      "code": "4807",
+      "name": "日成-KY",
+      "market": "TWSE",
+      "three_inst_ratio": 73.38,
+      "change": 73.38
+    },
+    {
+      "code": "2330",
+      "name": "台積電",
+      "market": "TWSE",
+      "three_inst_ratio": 72.86922080522034,
+      "change": 72.86922080522034
+    }
+  ],
+  "top_decliners": [
+    {
+      "code": "5508",
+      "name": "永信建",
+      "market": "TPEX",
+      "three_inst_ratio": -7.076821102998664,
+      "change": -7.494890277147347
+    },
+    {
+      "code": "6147",
+      "name": "頎邦",
+      "market": "TPEX",
+      "three_inst_ratio": -0.4492326114583704,
+      "change": -1.1530116820382144
+    },
+    {
+      "code": "3217",
+      "name": "優群",
+      "market": "TPEX",
+      "three_inst_ratio": -0.2975277412974842,
+      "change": -1.0999320420158425
+    },
+    {
+      "code": "6143",
+      "name": "振曜",
+      "market": "TPEX",
+      "three_inst_ratio": -0.189405169810624,
+      "change": -0.689062979740491
+    },
+    {
+      "code": "4768",
+      "name": "晶呈科技",
+      "market": "TPEX",
+      "three_inst_ratio": -0.4509563253800137,
+      "change": -0.47201429060905936
+    },
+    {
+      "code": "4933",
+      "name": "友輝",
+      "market": "TPEX",
+      "three_inst_ratio": -0.35858173605396043,
+      "change": -0.37687672258732574
+    },
+    {
+      "code": "8436",
+      "name": "大江",
+      "market": "TPEX",
+      "three_inst_ratio": -0.04857943462106945,
+      "change": -0.24373129334590346
+    },
+    {
+      "code": "3289",
+      "name": "宜特",
+      "market": "TPEX",
+      "three_inst_ratio": -0.2339338679307852,
+      "change": -0.2339338679307852
+    },
+    {
+      "code": "3088",
+      "name": "艾訊",
+      "market": "TPEX",
+      "three_inst_ratio": -0.21847657917590763,
+      "change": -0.22777345488552073
+    },
+    {
+      "code": "5457",
+      "name": "宣德",
+      "market": "TPEX",
+      "three_inst_ratio": -0.21250819817678276,
+      "change": -0.22510976248915263
+    },
+    {
+      "code": "3587",
+      "name": "閎康",
+      "market": "TPEX",
+      "three_inst_ratio": 0.7473347224510717,
+      "change": -0.18198570087630894
+    },
+    {
+      "code": "5483",
+      "name": "中美晶",
+      "market": "TPEX",
+      "three_inst_ratio": 0.6554031657299731,
+      "change": -0.15164319521706227
+    },
+    {
+      "code": "2640",
+      "name": "大車隊",
+      "market": "TPEX",
+      "three_inst_ratio": -0.10124026751998264,
+      "change": -0.10124026751998264
+    },
+    {
+      "code": "00923",
+      "name": "群益台ESG低碳50",
+      "market": "TWSE",
+      "three_inst_ratio": -0.09986788235720365,
+      "change": -0.09986788235720365
+    },
+    {
+      "code": "3707",
+      "name": "漢磊",
+      "market": "TPEX",
+      "three_inst_ratio": 0.0,
+      "change": -0.06967229048435192
+    }
+  ],
+  "window_days": 60,
+  "analysis_date": "2025-12-26T22:34:43.121254",
+  "ai_insights": {
+    "summary": "從法人持股變化來看，有以下幾點觀察： 1. 法人持股的主要趨勢顯示出在鼎固-KY、來億-KY、尼得科超眾、強信-KY及世界健身-KY等5檔股票中的持股比例明顯增加，這可能表示法人對這些公司的業績有較高的期待，或者認為這些公司的價值可能被市場低估，因此選擇加碼持股。",
+    "detailed_analysis": "從法人持股變化來看，有以下幾點觀察：\n\n1. 法人持股的主要趨勢顯示出在鼎固-KY、來億-KY、尼得科超眾、強信-KY及世界健身-KY等5檔股票中的持股比例明顯增加，這可能表示法人對這些公司的業績有較高的期待，或者認為這些公司的價值可能被市場低估，因此選擇加碼持股。\n\n2. 從特定產業或個股的法人偏好上看，鼎固-KY、來億-KY、強信-KY和世界健身-KY都屬於KY股，這可能反映出法人對於KY股有較高的投資偏好。KY股通常為在海外設立、在台灣上市的公司，這可能表示法人對於這些公司的國際化布局及營運有較高的信心。\n\n3. 在可能的市場影響因素上，法人的持股變化可能會對市場產生一定的影響。例如，當法人增加持股時，市場可能會對該股票產生更大的關注，股價可能會因此上升；反之，當法人減少持股時，可能會對該股票的市場信心產生負面影響，股價可能會下跌。\n\n4. 對於投資人而言，需要注意的風險包括法人可能會因為某些因素而突然改變其投資策略，例如公司的業績不如預期，或者市場環境變動等。此外，法人的持股變化也可能會引起市場的過度反應，導致股價的劇烈波動。然而，這也可能帶來投資機會，例如當法人增加持股時，投資人可以考慮跟隨法人的腳步，購買該股票。不過，投資人需注意不應全盲跟隨法人操作，需要結合自身的投資策略和風險承受能力來做出決策。",
+    "key_trends": {
+      "avg_gainer_change": 88.45387055147818,
+      "avg_decliner_change": -2.181782254310191,
+      "max_gain": 99.34,
+      "max_decline": -7.494890277147347,
+      "gainer_count": 5,
+      "decliner_count": 5
+    },
+    "sector_analysis": {
+      "gainers_by_sector": {
+        "科技": 0,
+        "金融": 0,
+        "其他": 5
+      },
+      "decliners_by_sector": {
+        "科技": 0,
+        "金融": 0,
+        "其他": 5
+      }
+    }
+  },
+  "metadata": {
+    "generated_at": "2025-12-26T22:34:59.395370",
+    "model_used": "gpt-4",
+    "analysis_type": "institutional_trend"
+  }
+}

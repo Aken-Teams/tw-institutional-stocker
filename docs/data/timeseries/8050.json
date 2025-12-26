@@ -691,5 +691,82 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 0.03039019259542085,
     "three_inst_ratio_change_20": -0.0022750973319341887
+  },
+  {
+    "date": "2025-12-15",
+    "code": "8050",
+    "name": "廣積",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.03039019259542085,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.03039019259542085,
+    "three_inst_ratio_change_20": -0.0022750973319341887
+  },
+  {
+    "date": "2025-12-16",
+    "code": "8050",
+    "name": "廣積",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.028779883772646522,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.028779883772646522,
+    "three_inst_ratio_change_20": -0.003885406154708518
+  },
+  {
+    "date": "2025-12-18",
+    "code": "8050",
+    "name": "廣積",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.028779883772646522,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.028779883772646522,
+    "three_inst_ratio_change_20": -0.0027478574887414217
+  },
+  {
+    "date": "2025-12-19",
+    "code": "8050",
+    "name": "廣積",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.028779883772646522,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.028779883772646522,
+    "three_inst_ratio_change_20": -0.0027478574887414217
+  },
+  {
+    "date": "2025-12-22",
+    "code": "8050",
+    "name": "廣積",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.028779883772646522,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.028779883772646522,
+    "three_inst_ratio_change_20": -0.0027478574887414217
+  },
+  {
+    "date": "2025-12-23",
+    "code": "8050",
+    "name": "廣積",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.028779883772646522,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.028779883772646522,
+    "three_inst_ratio_change_20": -0.0027478574887414217
+  },
+  {
+    "date": "2025-12-24",
+    "code": "8050",
+    "name": "廣積",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.028779883772646522,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.028779883772646522,
+    "three_inst_ratio_change_20": -0.0027478574887414217
   }
 ]

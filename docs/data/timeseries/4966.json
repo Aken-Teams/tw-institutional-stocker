@@ -691,5 +691,82 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 0.6888186818251836,
     "three_inst_ratio_change_20": -1.0839045415544084
+  },
+  {
+    "date": "2025-12-15",
+    "code": "4966",
+    "name": "譜瑞-KY",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.6451002618258701,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.6451002618258701,
+    "three_inst_ratio_change_20": -1.1338684501250522
+  },
+  {
+    "date": "2025-12-16",
+    "code": "4966",
+    "name": "譜瑞-KY",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.7175479292533039,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.7175479292533039,
+    "three_inst_ratio_change_20": -0.842828682701051
+  },
+  {
+    "date": "2025-12-18",
+    "code": "4966",
+    "name": "譜瑞-KY",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.8487031892512443,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.8487031892512443,
+    "three_inst_ratio_change_20": -0.4805903455638819
+  },
+  {
+    "date": "2025-12-19",
+    "code": "4966",
+    "name": "譜瑞-KY",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 0.9811075469634509,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 0.9811075469634509,
+    "three_inst_ratio_change_20": -0.10904623045543049
+  },
+  {
+    "date": "2025-12-22",
+    "code": "4966",
+    "name": "譜瑞-KY",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 1.1135119046756574,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 1.1135119046756574,
+    "three_inst_ratio_change_20": 0.02085993182824386
+  },
+  {
+    "date": "2025-12-23",
+    "code": "4966",
+    "name": "譜瑞-KY",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 1.0885299503903356,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 1.0885299503903356,
+    "three_inst_ratio_change_20": -0.011616608742674783
+  },
+  {
+    "date": "2025-12-24",
+    "code": "4966",
+    "name": "譜瑞-KY",
+    "market": "TPEX",
+    "foreign_ratio": 0.0,
+    "trust_ratio": 1.0872808526760696,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 1.0872808526760696,
+    "three_inst_ratio_change_20": -0.010367511028408494
   }
 ]
