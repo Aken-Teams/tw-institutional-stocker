@@ -856,5 +856,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 7.416343822257666,
     "three_inst_ratio_change_20": -0.47256284600079024
+  },
+  {
+    "date": "2026-01-07",
+    "code": "2206",
+    "name": "三陽工業",
+    "market": "TWSE",
+    "foreign_ratio": 7.15,
+    "trust_ratio": 0.24435063123862552,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 7.394350631238626,
+    "three_inst_ratio_change_20": -0.48824128399520106
   }
 ]
