@@ -1,5 +1,5 @@
 {
-  "updated": "2026-01-11T02:39:35.238373",
+  "updated": "2026-01-12T02:36:05.367532",
   "brokers": {
     "元大-中壢": [
       {
@@ -282,15 +282,6 @@
         "rank": 7
       }
     ],
-    "元大-桃園": [
-      {
-        "stock_code": "2412",
-        "net_vol": -87,
-        "side": "sell",
-        "pct": 1.15,
-        "rank": 8
-      }
-    ],
     "元大-永康": [
       {
         "stock_code": "2609",
@@ -316,15 +307,6 @@
         "side": "buy",
         "pct": 0.4,
         "rank": 14
-      }
-    ],
-    "元大-鑫永和": [
-      {
-        "stock_code": "2412",
-        "net_vol": 43,
-        "side": "buy",
-        "pct": 0.57,
-        "rank": 13
       }
     ],
     "元大-館前": [
@@ -368,13 +350,6 @@
         "side": "buy",
         "pct": 0.51,
         "rank": 8
-      },
-      {
-        "stock_code": "2412",
-        "net_vol": -68,
-        "side": "sell",
-        "pct": 0.9,
-        "rank": 9
       }
     ],
     "元大證券": [
@@ -496,13 +471,6 @@
         "side": "buy",
         "pct": 6.99,
         "rank": 1
-      },
-      {
-        "stock_code": "2412",
-        "net_vol": -510,
-        "side": "sell",
-        "pct": 6.77,
-        "rank": 4
       }
     ],
     "凱基": [
@@ -582,13 +550,6 @@
         "side": "sell",
         "pct": 1.26,
         "rank": 10
-      },
-      {
-        "stock_code": "2412",
-        "net_vol": 1212,
-        "side": "buy",
-        "pct": 16.09,
-        "rank": 2
       }
     ],
     "凱基-三多": [
@@ -607,13 +568,6 @@
         "side": "sell",
         "pct": 1.13,
         "rank": 7
-      },
-      {
-        "stock_code": "2412",
-        "net_vol": -29,
-        "side": "sell",
-        "pct": 0.38,
-        "rank": 15
       }
     ],
     "凱基-信義": [
@@ -751,13 +705,6 @@
         "side": "sell",
         "pct": 3.7,
         "rank": 6
-      },
-      {
-        "stock_code": "2412",
-        "net_vol": 299,
-        "side": "buy",
-        "pct": 3.97,
-        "rank": 4
       }
     ],
     "凱基-員林": [
@@ -1009,13 +956,6 @@
         "side": "sell",
         "pct": 4.75,
         "rank": 4
-      },
-      {
-        "stock_code": "2412",
-        "net_vol": -611,
-        "side": "sell",
-        "pct": 8.11,
-        "rank": 3
       }
     ],
     "大和國泰": [
@@ -1099,13 +1039,6 @@
         "side": "buy",
         "pct": 0.62,
         "rank": 5
-      },
-      {
-        "stock_code": "2412",
-        "net_vol": -47,
-        "side": "sell",
-        "pct": 0.62,
-        "rank": 14
       }
     ],
     "富邦-南屯": [
@@ -1253,15 +1186,6 @@
         "rank": 12
       }
     ],
-    "富邦-永和": [
-      {
-        "stock_code": "2412",
-        "net_vol": 248,
-        "side": "buy",
-        "pct": 3.29,
-        "rank": 5
-      }
-    ],
     "富邦-竹東": [
       {
         "stock_code": "2881",
@@ -1396,13 +1320,6 @@
         "side": "sell",
         "pct": 5.3,
         "rank": 4
-      },
-      {
-        "stock_code": "2412",
-        "net_vol": -89,
-        "side": "sell",
-        "pct": 1.18,
-        "rank": 7
       }
     ],
     "摩根大通": [
@@ -1538,13 +1455,6 @@
         "side": "sell",
         "pct": 4.4,
         "rank": 5
-      },
-      {
-        "stock_code": "2412",
-        "net_vol": -1304,
-        "side": "sell",
-        "pct": 17.31,
-        "rank": 1
       }
     ],
     "新加坡商瑞銀": [
@@ -1659,13 +1569,6 @@
         "side": "buy",
         "pct": 0.85,
         "rank": 4
-      },
-      {
-        "stock_code": "2412",
-        "net_vol": 212,
-        "side": "buy",
-        "pct": 2.81,
-        "rank": 6
       }
     ],
     "港商野村": [
@@ -1787,13 +1690,6 @@
         "side": "sell",
         "pct": 1.73,
         "rank": 9
-      },
-      {
-        "stock_code": "2412",
-        "net_vol": -53,
-        "side": "sell",
-        "pct": 0.7,
-        "rank": 11
       }
     ],
     "港商麥格理": [
@@ -1845,13 +1741,6 @@
         "side": "buy",
         "pct": 0.68,
         "rank": 6
-      },
-      {
-        "stock_code": "2412",
-        "net_vol": 1429,
-        "side": "buy",
-        "pct": 18.97,
-        "rank": 1
       }
     ],
     "美商高盛": [
@@ -1987,13 +1876,6 @@
         "side": "buy",
         "pct": 5.48,
         "rank": 2
-      },
-      {
-        "stock_code": "2412",
-        "net_vol": -923,
-        "side": "sell",
-        "pct": 12.25,
-        "rank": 2
       }
     ],
     "美林": [
@@ -2108,13 +1990,6 @@
         "side": "sell",
         "pct": 0.7,
         "rank": 13
-      },
-      {
-        "stock_code": "2412",
-        "net_vol": 121,
-        "side": "buy",
-        "pct": 1.61,
-        "rank": 8
       }
     ]
   }
