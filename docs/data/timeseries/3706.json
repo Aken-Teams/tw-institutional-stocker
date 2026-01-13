@@ -889,5 +889,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 10.378242020824658,
     "three_inst_ratio_change_20": 0.6302133112269726
+  },
+  {
+    "date": "2026-01-12",
+    "code": "3706",
+    "name": "神達",
+    "market": "TWSE",
+    "foreign_ratio": 9.66,
+    "trust_ratio": 0.3484173869288877,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 10.008417386928889,
+    "three_inst_ratio_change_20": 0.38847169009566684
   }
 ]

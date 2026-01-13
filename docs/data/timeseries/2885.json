@@ -889,5 +889,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 25.795781445376594,
     "three_inst_ratio_change_20": -0.0017408328849377597
+  },
+  {
+    "date": "2026-01-12",
+    "code": "2885",
+    "name": "元大金",
+    "market": "TWSE",
+    "foreign_ratio": 27.37,
+    "trust_ratio": -1.5947848374760154,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 25.775215162523985,
+    "three_inst_ratio_change_20": -0.038577384857507724
   }
 ]

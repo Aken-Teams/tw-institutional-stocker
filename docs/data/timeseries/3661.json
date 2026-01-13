@@ -889,5 +889,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 54.01571542425057,
     "three_inst_ratio_change_20": -1.2625882066810448
+  },
+  {
+    "date": "2026-01-12",
+    "code": "3661",
+    "name": "世芯-KY",
+    "market": "TWSE",
+    "foreign_ratio": 48.19,
+    "trust_ratio": 5.78194522970831,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 53.97194522970831,
+    "three_inst_ratio_change_20": -0.7502593496970107
   }
 ]

@@ -823,5 +823,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 7.575128598374453,
     "three_inst_ratio_change_20": -1.1861088887276967
+  },
+  {
+    "date": "2026-01-12",
+    "code": "2607",
+    "name": "榮運",
+    "market": "TWSE",
+    "foreign_ratio": 9.91,
+    "trust_ratio": -2.3154336515504856,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 7.594566348449515,
+    "three_inst_ratio_change_20": -1.1464837220109896
   }
 ]
