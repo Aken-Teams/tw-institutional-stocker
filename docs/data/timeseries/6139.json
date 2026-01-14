@@ -900,5 +900,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 31.498853106718784,
     "three_inst_ratio_change_20": -1.462315147697879
+  },
+  {
+    "date": "2026-01-13",
+    "code": "6139",
+    "name": "亞翔",
+    "market": "TWSE",
+    "foreign_ratio": 31.94,
+    "trust_ratio": 1.0812151487428001,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 33.021215148742805,
+    "three_inst_ratio_change_20": -1.0402449558149627
   }
 ]
