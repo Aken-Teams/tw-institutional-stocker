@@ -911,5 +911,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 15.908798803463998,
     "three_inst_ratio_change_20": 0.2990831084024457
+  },
+  {
+    "date": "2026-01-14",
+    "code": "3045",
+    "name": "台灣大",
+    "market": "TWSE",
+    "foreign_ratio": 11.6,
+    "trust_ratio": 4.24340849556228,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 15.84340849556228,
+    "three_inst_ratio_change_20": 0.2825466598029678
   }
 ]

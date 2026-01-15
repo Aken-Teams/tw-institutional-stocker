@@ -911,5 +911,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 43.934979804789776,
     "three_inst_ratio_change_20": -3.6702470907572007
+  },
+  {
+    "date": "2026-01-14",
+    "code": "2357",
+    "name": "華碩",
+    "market": "TWSE",
+    "foreign_ratio": 38.26,
+    "trust_ratio": 5.6605417834136205,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 43.92054178341362,
+    "three_inst_ratio_change_20": -3.703000999999624
   }
 ]

@@ -911,5 +911,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 43.07783446623093,
     "three_inst_ratio_change_20": 0.06481928745901655
+  },
+  {
+    "date": "2026-01-14",
+    "code": "9904",
+    "name": "寶成",
+    "market": "TWSE",
+    "foreign_ratio": 43.3,
+    "trust_ratio": -0.09251563831867354,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 43.207484361681324,
+    "three_inst_ratio_change_20": 0.19963947284170303
   }
 ]

@@ -911,5 +911,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 22.470052965241493,
     "three_inst_ratio_change_20": -1.4924493129408916
+  },
+  {
+    "date": "2026-01-14",
+    "code": "3036",
+    "name": "文曄",
+    "market": "TWSE",
+    "foreign_ratio": 19.74,
+    "trust_ratio": 2.8120170566089797,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 22.552017056608978,
+    "three_inst_ratio_change_20": -1.5047816173604573
   }
 ]

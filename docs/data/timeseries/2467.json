@@ -911,5 +911,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 15.630835879360237,
     "three_inst_ratio_change_20": 0.6006052687912113
+  },
+  {
+    "date": "2026-01-14",
+    "code": "2467",
+    "name": "志聖",
+    "market": "TWSE",
+    "foreign_ratio": 14.62,
+    "trust_ratio": 0.7801979425926827,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 15.400197942592682,
+    "three_inst_ratio_change_20": 0.175932723137457
   }
 ]
