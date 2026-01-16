@@ -845,5 +845,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 3.061436113744055,
     "three_inst_ratio_change_20": -1.2839457243906733
+  },
+  {
+    "date": "2026-01-15",
+    "code": "1808",
+    "name": "潤隆",
+    "market": "TWSE",
+    "foreign_ratio": 5.08,
+    "trust_ratio": -2.1185638862559446,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 2.9614361137440555,
+    "three_inst_ratio_change_20": -1.3639457243906725
   }
 ]

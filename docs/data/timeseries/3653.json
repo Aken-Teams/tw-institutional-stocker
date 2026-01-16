@@ -922,5 +922,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 34.16727616016862,
     "three_inst_ratio_change_20": -1.8363368999756204
+  },
+  {
+    "date": "2026-01-15",
+    "code": "3653",
+    "name": "健策",
+    "market": "TWSE",
+    "foreign_ratio": 27.27,
+    "trust_ratio": 7.100402768628945,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 34.37040276862894,
+    "three_inst_ratio_change_20": -1.54497027137284
   }
 ]

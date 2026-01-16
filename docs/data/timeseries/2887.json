@@ -922,5 +922,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 27.295951472391764,
     "three_inst_ratio_change_20": 2.5418870714720683
+  },
+  {
+    "date": "2026-01-15",
+    "code": "2887",
+    "name": "台新新光金",
+    "market": "TWSE",
+    "foreign_ratio": 22.43,
+    "trust_ratio": 5.0357273942955185,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 27.46572739429552,
+    "three_inst_ratio_change_20": 2.2946155550161684
   }
 ]
