@@ -933,5 +933,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 5.55980858275611,
     "three_inst_ratio_change_20": 0.6616669785309286
+  },
+  {
+    "date": "2026-01-16",
+    "code": "1522",
+    "name": "堤維西",
+    "market": "TWSE",
+    "foreign_ratio": 5.96,
+    "trust_ratio": 0.04536591924059722,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 6.005365919240597,
+    "three_inst_ratio_change_20": 1.0576621575458987
   }
 ]
