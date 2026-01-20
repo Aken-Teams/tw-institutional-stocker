@@ -944,5 +944,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 38.86575055171239,
     "three_inst_ratio_change_20": -3.014390171158766
+  },
+  {
+    "date": "2026-01-19",
+    "code": "6442",
+    "name": "光聖",
+    "market": "TWSE",
+    "foreign_ratio": 31.17,
+    "trust_ratio": 7.886925423199802,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 39.0569254231998,
+    "three_inst_ratio_change_20": -3.0856577669856264
   }
 ]

@@ -944,5 +944,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 7.18,
     "three_inst_ratio_change_20": -0.9500000000000011
+  },
+  {
+    "date": "2026-01-19",
+    "code": "2367",
+    "name": "燿華",
+    "market": "TWSE",
+    "foreign_ratio": 6.72,
+    "trust_ratio": 0.08014123263941433,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 6.800141232639414,
+    "three_inst_ratio_change_20": -1.0698587673605857
   }
 ]

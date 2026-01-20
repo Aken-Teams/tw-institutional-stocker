@@ -944,5 +944,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 59.34759320767003,
     "three_inst_ratio_change_20": 0.7098773934431364
+  },
+  {
+    "date": "2026-01-19",
+    "code": "5243",
+    "name": "乙盛-KY",
+    "market": "TWSE",
+    "foreign_ratio": 58.84,
+    "trust_ratio": 0.5364064676972494,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 59.37640646769725,
+    "three_inst_ratio_change_20": 1.0586906534703573
   }
 ]
