@@ -955,5 +955,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 48.02635955554743,
     "three_inst_ratio_change_20": -1.4568890377920738
+  },
+  {
+    "date": "2026-01-20",
+    "code": "4915",
+    "name": "致伸",
+    "market": "TWSE",
+    "foreign_ratio": 45.81,
+    "trust_ratio": 2.17249302729484,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 47.982493027294844,
+    "three_inst_ratio_change_20": -1.4985663560907767
   }
 ]

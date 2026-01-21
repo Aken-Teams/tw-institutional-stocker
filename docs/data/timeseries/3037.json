@@ -955,5 +955,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 45.9132385273242,
     "three_inst_ratio_change_20": -0.9250234491352671
+  },
+  {
+    "date": "2026-01-20",
+    "code": "3037",
+    "name": "欣興",
+    "market": "TWSE",
+    "foreign_ratio": 42.56,
+    "trust_ratio": 3.5621393109028663,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 46.12213931090287,
+    "three_inst_ratio_change_20": -0.6315541476368765
   }
 ]

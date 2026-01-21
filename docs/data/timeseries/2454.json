@@ -955,5 +955,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 57.98765657411784,
     "three_inst_ratio_change_20": 0.003634695680609923
+  },
+  {
+    "date": "2026-01-20",
+    "code": "2454",
+    "name": "聯發科",
+    "market": "TWSE",
+    "foreign_ratio": 56.76,
+    "trust_ratio": 1.2651361606779041,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 58.0251361606779,
+    "three_inst_ratio_change_20": 0.13755612098717052
   }
 ]

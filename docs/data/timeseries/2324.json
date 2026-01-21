@@ -955,5 +955,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 35.5116032329081,
     "three_inst_ratio_change_20": 0.20348920062309617
+  },
+  {
+    "date": "2026-01-20",
+    "code": "2324",
+    "name": "仁寶",
+    "market": "TWSE",
+    "foreign_ratio": 35.13,
+    "trust_ratio": 0.2332488994509004,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 35.3632488994509,
+    "three_inst_ratio_change_20": 0.0468527448301117
   }
 ]

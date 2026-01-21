@@ -955,5 +955,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 12.453651604847625,
     "three_inst_ratio_change_20": -0.09346486582510138
+  },
+  {
+    "date": "2026-01-20",
+    "code": "1907",
+    "name": "永豐餘",
+    "market": "TWSE",
+    "foreign_ratio": 12.32,
+    "trust_ratio": 0.1224468142293662,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 12.442446814229367,
+    "three_inst_ratio_change_20": -0.10466965644335957
   }
 ]

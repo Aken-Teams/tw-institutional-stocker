@@ -955,5 +955,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 45.662222222222226,
     "three_inst_ratio_change_20": 0.05833333333333712
+  },
+  {
+    "date": "2026-01-20",
+    "code": "2723",
+    "name": "美食-KY",
+    "market": "TWSE",
+    "foreign_ratio": 45.82,
+    "trust_ratio": -0.11777777777777779,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 45.702222222222225,
+    "three_inst_ratio_change_20": 0.07833333333333314
   }
 ]

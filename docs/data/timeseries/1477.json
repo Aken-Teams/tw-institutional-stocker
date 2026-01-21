@@ -955,5 +955,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 14.927225516849713,
     "three_inst_ratio_change_20": -2.434430818551103
+  },
+  {
+    "date": "2026-01-20",
+    "code": "1477",
+    "name": "聚陽",
+    "market": "TWSE",
+    "foreign_ratio": 18.72,
+    "trust_ratio": -3.728250261489234,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 14.991749738510766,
+    "three_inst_ratio_change_20": -2.2542907465177286
   }
 ]

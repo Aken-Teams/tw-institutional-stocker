@@ -955,5 +955,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 18.66374188374,
     "three_inst_ratio_change_20": -1.3787605320727714
+  },
+  {
+    "date": "2026-01-20",
+    "code": "9938",
+    "name": "百和",
+    "market": "TWSE",
+    "foreign_ratio": 18.79,
+    "trust_ratio": -0.13625811626000253,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 18.653741883739997,
+    "three_inst_ratio_change_20": -1.3089594757689795
   }
 ]

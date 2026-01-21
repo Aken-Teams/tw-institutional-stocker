@@ -955,5 +955,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 9.029573701841686,
     "three_inst_ratio_change_20": -0.06380875884287995
+  },
+  {
+    "date": "2026-01-20",
+    "code": "1702",
+    "name": "南僑",
+    "market": "TWSE",
+    "foreign_ratio": 8.43,
+    "trust_ratio": 0.5671397685785383,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 8.997139768578538,
+    "three_inst_ratio_change_20": -0.2662426921060277
   }
 ]

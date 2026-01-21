@@ -955,5 +955,16 @@
     "dealer_ratio": 0.0,
     "three_inst_ratio": 16.767956335603543,
     "three_inst_ratio_change_20": 2.5649135396796563
+  },
+  {
+    "date": "2026-01-20",
+    "code": "8046",
+    "name": "南電",
+    "market": "TWSE",
+    "foreign_ratio": 13.63,
+    "trust_ratio": 4.825040276408325,
+    "dealer_ratio": 0.0,
+    "three_inst_ratio": 18.455040276408326,
+    "three_inst_ratio_change_20": 4.27885074829136
   }
 ]
